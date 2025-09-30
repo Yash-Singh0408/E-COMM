@@ -22,6 +22,8 @@ const Navbar = () => {
     setDrawerOpen(!drawerOpen);
   };
 
+  const isAdmin = true;
+
   return (
     <>
       <nav className="container mx-auto flex item-center justify-between px-6 py-4 bg-amber-50 ">
@@ -61,6 +63,14 @@ const Navbar = () => {
 
           {/* Desktop navigation */}
           <div className="flex items-center space-x-6">
+            {isAdmin && (
+              <Link
+                to="/admin"
+                className=" block bg-black px-2 rounded text-white text-sm  uppercase transition"
+              >
+                Admin
+              </Link>
+            )}
             <Link to="/profile" className="hover:text-black transition">
               <HiOutlineUser className="h-6 w-6 text-gray-700" />
             </Link>

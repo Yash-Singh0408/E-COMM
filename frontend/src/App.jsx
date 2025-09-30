@@ -11,11 +11,18 @@ import CheckOut from "./components/Cart/CheckOut"
 import OrderConfirmationPage from "./pages/OrderConfirmationPage"
 import OrderDetailsPage from "./pages/OrderDetailsPage"
 import MyOrdersPage from "./pages/MyOrdersPage"
+import AdminLayout from "./components/Admin/AdminLayout"
+import AdminHomePage from "./pages/AdminHomePage"
+import UserManagementPage from "./pages/UserManagementPage"
+import ProductManagement from "./components/Admin/ProductManagement"
+import EditProductsPage from "./components/Admin/EditProductsPage"
+import OrderManagement from "./components/Admin/OrderManagement"
 function App() {
   return (
     <BrowserRouter future={{ v7_startTransition: true , v7_relativeSplatPath  : true}}>
     <Toaster position="top-right" />
       <Routes>
+      {/* User Routes */}
           <Route path="/" element={<UserLayout />}>
             <Route index element={<HomePage />} />
             <Route path="/login" element={<LoginPage />} />
@@ -28,7 +35,14 @@ function App() {
             <Route path="/order/:id" element={<OrderDetailsPage /> } />
             <Route path="/my-orders" element={<MyOrdersPage /> } />
           </Route>
-        <Route>{/* Admin Routes */}</Route>
+          {/* Admin Routes */}
+        <Route path="/admin" element={<AdminLayout />}>
+            <Route index element={<AdminHomePage />} />
+            <Route path="users" element={<UserManagementPage/>} />
+            <Route path="products" element={<ProductManagement/>} />
+            <Route path="products/:id/edit" element={<EditProductsPage/>} />
+            <Route path="orders" element={<OrderManagement/>} />
+        </Route>
       </Routes>
     </BrowserRouter>
     
