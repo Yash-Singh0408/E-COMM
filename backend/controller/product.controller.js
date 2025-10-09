@@ -113,7 +113,7 @@ const updateProduct = async (req, res) => {
     }
   } catch (error) {
     console.log(error);
-    res.status(500).send("Server error");
+    return res.status(500).json({ message: "Server error" });
   }
 };
 
@@ -129,7 +129,7 @@ const deleteProduct = async (req, res) => {
     }
   } catch (error) {
     console.log(error);
-    res.status(500).send("Server error");
+    return res.status(500).json({ message: "Server error" });
   }
 };
 
@@ -220,8 +220,8 @@ const getProducts = async (req, res) => {
 
     res.json(products);
   } catch (error) {
-    console.error(error);
-    res.status(500).send("Server error");
+    console.log(error);
+    return res.status(500).json({ message: "Server error" });
   }
 };
 
@@ -237,24 +237,24 @@ const getBestSellingProduct = async (req, res) => {
     }
   } catch (error) {
     console.log(error);
-    res.status(500).send("Server error");
+    return res.status(500).json({ message: "Server error" });
   }
 };
 
 // Get 8 newly arrived products
 const getNewArrivals = async (req, res) => {
-    try {
-        const newArrivals = await Product.find().sort({ createdAt: -1 }).limit(8);
-        if (newArrivals.length > 0) {
-            res.json(newArrivals);
-        } else {
-            res.status(404).json({ message: "No products found" });
-        }
-    } catch (error) {
-        console.log(error);
-        res.status(500).send("Server error");
-    }  
-} 
+  try {
+    const newArrivals = await Product.find().sort({ createdAt: -1 }).limit(8);
+    if (newArrivals.length > 0) {
+      res.json(newArrivals);
+    } else {
+      res.status(404).json({ message: "No products found" });
+    }
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({ message: "Server error" });
+  }
+};
 
 // Get a single product
 const getProduct = async (req, res) => {
@@ -289,7 +289,7 @@ const getSimilarProducts = async (req, res) => {
     res.json(similarProducts);
   } catch (error) {
     console.log(error);
-    res.status(500).send("Server error");
+    return res.status(500).json({ message: "Server error" });
   }
 };
 
@@ -301,5 +301,5 @@ export {
   getProduct,
   getSimilarProducts,
   getBestSellingProduct,
-  getNewArrivals
+  getNewArrivals,
 };

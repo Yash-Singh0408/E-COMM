@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import Product from "./models/Product.model.js";
 import User from "./models/User.model.js";
 import products from "./data/product.data.js";
+import Cart from "./models/Cart.model.js";
 
 dotenv.config();
 
@@ -15,6 +16,7 @@ const seedData = async () => {
         // Clear existing data
         await Product.deleteMany({});
         await User.deleteMany({});
+        await Cart.deleteMany({});
 
         // Create a default admin user
         const createdUser = await User.create({
