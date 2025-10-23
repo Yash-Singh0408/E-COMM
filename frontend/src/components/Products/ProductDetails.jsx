@@ -1,68 +1,39 @@
 import { toast } from "sonner";
 import React, { useEffect } from "react";
 import ProductGrid from "./ProductGrid";
+import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchProductDetails, fetchSimilarProducts } from "../../redux/slices/productsSlice";
+import { addToCart } from "../../redux/slices/cartSlice";
 
-const ProductDetails = () => {
-  const seletctedProduct = {
-    name: "Product Name",
-    price: "199.99",
-    originalPrice: "249.99",
-    description:
-      "This is a detailed description of the product. It highlights features, specifications, and other relevant information that helps customers make informed purchasing decisions.",
-    brand: "Brand Name",
-    material: "Material Type",
-    sizes: ["S", "M", "L", "XL"],
-    colors: ["Red", "Black"],
-    images: [
-      {
-        url: "https://picsum.photos/500/500?random=1",
-        alt: "Product Image",
-      },
-      {
-        url: "https://picsum.photos/500/500?random=2",
-        alt: "Product Image",
-      },
-    ],
-  };
-
-  const similarProducts = [
-    {
-      _id: "1",
-      name: "Similar Product 1",
-      price: "89.99",
-      images: [{ url: "https://picsum.photos/500/500?random=3" }],
-    },
-    {
-      _id: "2",
-      name: "Similar Product 2",
-      price: "79.99",
-      images: [{ url: "https://picsum.photos/500/500?random=4" }],
-    },
-    {
-      _id: "3",
-      name: "Similar Product 3",
-      price: "99.99",
-      images: [{ url: "https://picsum.photos/500/500?random=5" }],
-    },
-    {
-      _id: "4",
-      name: "Similar Product 4",
-      price: "59.99",
-      images: [{ url: "https://picsum.photos/500/500?random=6" }],
-    },
-  ];
-
+const ProductDetails = ({productId}) => {
+// console.log("PRODUCT ID",productId);
+  const params = useParams();
+  const id = params?.id;
+  // console.log(" ID ",id);
+  const dispatch = useDispatch();
+  const {selectedProduct , loading, error , similarProducts} = useSelector((state) => state.products);
+  const {user , guestId} = useSelector((state) => state.auth);
   const [mainImage, setMainImage] = React.useState("");
   const [selectedSize, setSelectedSize] = React.useState(null);
   const [selectedColor, setSelectedColor] = React.useState(null);
   const [quantity, setQuantity] = React.useState(1);
   const [isButtonDisabled, setIsButtonDisabled] = React.useState(false);
 
+  const productFetchId = productId || id;
+  // console.log("Product id",productFetchId);
   useEffect(() => {
-    if (seletctedProduct.images.length > 0) {
-      setMainImage(seletctedProduct.images[0].url);
+    if(productFetchId){
+      dispatch(fetchProductDetails(productFetchId))
+      dispatch(fetchSimilarProducts(productFetchId))   //might be a problem
     }
-  }, []);
+  }, [dispatch, productFetchId]);
+
+  useEffect(() => {
+    if (selectedProduct?.images?.length > 0) {
+      setMainImage(selectedProduct.images[0].url);
+    }
+  }, [selectedProduct]);
 
   //   Handle Quantity Change
   const handleQuantityChange = (action) => {
@@ -83,21 +54,42 @@ const ProductDetails = () => {
       return;
     }
     setIsButtonDisabled(true);
-    setTimeout(() => {
-      setIsButtonDisabled(false);
-      toast.success("Product added to cart", {
-        duration: 2000,
-      });
-    }, 1000);
+    dispatch(
+      addToCart({
+        productId: productFetchId,
+        quantity,
+        size: selectedSize,
+        color: selectedColor,
+        guestId,
+        userId: user?._id
+      })
+    ).then(
+      ()=>{
+        toast.success("Product added to cart successfully", {
+          duration: 2000,
+        });
+      })
+      .finally(()=>{
+        setIsButtonDisabled(false);
+      })
   };
+
+  if(loading){
+    return <p>Loading...</p>
+  }
+
+  if(error){
+    return <p>Error: {error}</p>
+  }
 
   return (
     <div className="p-6">
+    {selectedProduct && (
       <div className="max-w-6xl mx-auto bg-white p-8 rounded-lg">
         <div className="flex flex-col md:flex-row">
           {/* Left Image */}
           <div className="hidden md:flex flex-col space-y-4 mr-6">
-            {seletctedProduct.images.map((image, index) => (
+            {selectedProduct.images.map((image, index) => (
               <img
                 key={index}
                 src={image.url}
@@ -116,14 +108,14 @@ const ProductDetails = () => {
             <div className="mb-4">
               <img
                 src={mainImage}
-                alt={seletctedProduct.images[0].alt || "Main Product"}
+                alt={selectedProduct.images[0].alt || "Main Product"}
                 className="w-full h-full object-cover rounded-lg"
               />
             </div>
           </div>
           {/* Mobile Images */}
           <div className="md:hidden flex overscroll-x-scroll space-x-4 mb-4">
-            {seletctedProduct.images.map((image, index) => (
+            {selectedProduct.images.map((image, index) => (
               <img
                 key={index}
                 src={image.url}
@@ -140,21 +132,21 @@ const ProductDetails = () => {
           {/* Right Details */}
           <div className="md:w-1/2 md:ml-10">
             <h1 className="text-2xl md:text-3xl font-semibold mb-2">
-              {seletctedProduct.name}
+              {selectedProduct.name}
             </h1>
             <p className="text-lg text-gray-600 mb-1 line-through">
-              {seletctedProduct.originalPrice &&
-                `$${seletctedProduct.originalPrice}`}
+              {selectedProduct.originalPrice &&
+                `$${selectedProduct.originalPrice}`}
             </p>
             <p className="text-xl text-gray-600 mb-4">
-              {seletctedProduct.price && `$${seletctedProduct.price}`}
+              {selectedProduct.price && `$${selectedProduct.price}`}
             </p>
-            <p className="text-gray-600 mb-4">{seletctedProduct.description}</p>
+            <p className="text-gray-600 mb-4">{selectedProduct.description}</p>
 
             <div className="mb-4">
               <p className="text-gray-700">Color:</p>
               <div className="flex gap-2 mt-2">
-                {seletctedProduct.colors.map((color) => (
+                {selectedProduct.colors.map((color) => (
                   <button
                     key={color}
                     onClick={() => setSelectedColor(color)}
@@ -176,7 +168,7 @@ const ProductDetails = () => {
             <div className="mb-4">
               <p className="text-gray-700">Size:</p>
               <div className="flex gap-2 mt-2">
-                {seletctedProduct.sizes.map((size) => (
+                {selectedProduct.sizes.map((size) => (
                   <button
                     key={size}
                     onClick={() => setSelectedSize(size)}
@@ -227,11 +219,11 @@ const ProductDetails = () => {
                 <tbody>
                   <tr>
                     <td className="py-1">Brand</td>
-                    <td className="py-1">{seletctedProduct.brand}</td>
+                    <td className="py-1">{selectedProduct.brand}</td>
                   </tr>
                   <tr>
                     <td className="py-1">Material</td>
-                    <td className="py-1">{seletctedProduct.material}</td>
+                    <td className="py-1">{selectedProduct.material}</td>
                   </tr>
                 </tbody>
               </table>
@@ -242,9 +234,10 @@ const ProductDetails = () => {
           <h2 className="text-2xl text-center font-medium mb-4">
             You might also like
           </h2>
-          <ProductGrid products={similarProducts} />
+          <ProductGrid products={similarProducts} loading={loading} error={error} />
         </div>
       </div>
+    )}
     </div>
   );
 };

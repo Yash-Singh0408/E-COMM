@@ -1,14 +1,41 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { loginUser } from '../redux/slices/authSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { mergeCart } from '../redux/slices/cartSlice';
 
 const LoginPage = () => {
 
     const [email, setEmail] = React.useState('');
     const [password, setPassword] = React.useState('');
 
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const location = useLocation();
+    const {user , guestId} = useSelector((state) => state.auth);
+    const { cart } = useSelector((state) => state.cart);
+
+    // Get redirect parameters and check if its checkout or something else
+        const redirect = new URLSearchParams(location.search).get("redirect") || "/";
+    const isCheckOutRedirect = redirect.includes("checkout")
+
+    useEffect(()=>{
+        if(user){
+            if(cart?.products.length > 0 && guestId){
+                dispatch(mergeCart({guestId , user})).then(()=>{
+                    navigate(isCheckOutRedirect ? "/checkout" : "/")
+                })
+            } else {
+                navigate(isCheckOutRedirect ? "/checkout" : "/")
+            }
+        }
+    },[user , guestId , cart , navigate , isCheckOutRedirect , dispatch])
+
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log("User login:", { email, password });
+        dispatch(loginUser({ email, password }));
+        navigate("/");
     }
 
     return (
@@ -59,7 +86,7 @@ const LoginPage = () => {
                     </button>
                 </div>
                 <p className="text-center text-gray-600 text-sm mt-4">
-                    Don't have an account? <Link to="/register" className="text-blue-500 hover:text-blue-700">Register</Link>
+                    Don't have an account? <Link to={`/register?redirect=${encodeURIComponent(redirect)}`} className="text-blue-500 hover:text-blue-700">Register</Link>
                 </p>
             </form>
          </div>

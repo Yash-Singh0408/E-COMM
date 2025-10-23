@@ -17,7 +17,7 @@ const FeaturedCollection = () => {
                 <p className='text-lg text-gray-600 mb-6'>
                     Discover our latest collection of apparels designed for ultimate comfort and style. Whether you're at home, at work, or on the go, our pieces are crafted to keep you feeling great all day long.
                 </p>
-                <Link to="/collection/all" className='bg-black w-fit self-center lg:self-auto text-white px-6 py-3 rounded-lg text-lg hover:bg-gray-800'>
+                <Link to="/collections/all" className='bg-black w-fit self-center lg:self-auto text-white px-6 py-3 rounded-lg text-lg hover:bg-gray-800'>
                     Shop Now
                 </Link>
             </div>

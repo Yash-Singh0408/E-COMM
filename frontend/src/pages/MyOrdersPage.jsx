@@ -1,62 +1,29 @@
 import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { fetchUserOrders } from "../redux/slices/orderSlice";
 
 const MyOrdersPage = () => {
-  const [orders, setOrders] = React.useState([]);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { orders , loading , error } = useSelector((state) => state.orders);
 
-  useEffect(() => {
-    setTimeout(() => {
-      const mockOrders = [
-        {
-          _id: "1",
-          createdAt: new Date().toISOString(),
-          shippingAddress: {
-            city: "New York",
-            country: "10001",
-          },
-          orderItems: [
-            {
-              name: "Product 1",
-              image: "https://picsum.photos/500/500?random=1",
-            },
-            {
-              name: "Product 2",
-              image: "https://picsum.photos/500/500?random=2",
-            },
-          ],
-          totalPrice: 199.99,
-          isPaid: true,
-        },
-        {
-          _id: "2",
-          createdAt: new Date().toISOString(),
-          shippingAddress: {
-            city: "Los Angeles",
-            country: "90001",
-          },
-          orderItems: [
-            {
-              name: "Product 3",
-              image: "https://picsum.photos/500/500?random=3",
-            },
-            {
-              name: "Product 4",
-              image: "https://picsum.photos/500/500?random=4",
-            },
-          ],
-          totalPrice: 89.99,
-          isPaid: false,
-        },
-      ];
-      setOrders(mockOrders);
-    }, 1000);
-  }, []);
+  useEffect(()=>{
+    dispatch(fetchUserOrders())
+  },[dispatch])
 
   const handleRowClick = (orderId) => {
     console.log(`Order ID: ${orderId}`);
     navigate(`/order/${orderId}`);
   };
+
+  if(loading){
+    return <div>Loading...</div>
+  }
+
+  if(error){
+    return <div>Error: {error}</div>
+  }
 
   return (
     <div className="max-w-7x1 mx-auto p-4 sm:p-6">

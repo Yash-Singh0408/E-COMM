@@ -170,7 +170,7 @@ const mergeCart = async (req, res) => {
   try {
     // Find the usercart and guest cart
     console.log("Request body:", req.body);
-console.log("Looking for guestId:", guestId);
+    console.log("Looking for guestId:", guestId);
     const guestCart = await Cart.findOne({ guestId });
     console.log("Found guestCart:", guestCart);
     const userCart = await Cart.findOne({ user: req.user._id });
@@ -218,7 +218,9 @@ console.log("Looking for guestId:", guestId);
         guestCart.user = req.user._id;
         guestCart.guestId = undefined;
         await guestCart.save();
-        res.status(200).json({ message: "Guest cart assigned to user", guestCart });
+        res
+          .status(200)
+          .json({ message: "Guest cart assigned to user", guestCart });
       }
     } else {
       if (userCart) {

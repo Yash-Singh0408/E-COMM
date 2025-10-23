@@ -4,10 +4,10 @@ import { addGuestUserProduct, deleteProductFromCart, getCartItems, mergeCart, up
 
 const router = express.Router();
 
+router.get("/get", getCartItems)
 router.post("/add", addGuestUserProduct);
 router.put("/update", updateProductQuantity);
 router.delete("/delete", deleteProductFromCart)
-router.get("/get", getCartItems)
 router.post("/merge", protect, mergeCart);
 
 

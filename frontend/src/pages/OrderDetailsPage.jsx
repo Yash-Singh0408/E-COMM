@@ -1,41 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchOrderDetails } from "../redux/slices/orderSlice";
 
 const OrderDetailsPage = () => {
   const { id } = useParams();
-  const [orderDetails, setOrderDetails] = useState(null);
+  const dispatch = useDispatch();
+  const { orderDetails, loading, error } = useSelector((state) => state.orders);
 
   useEffect(() => {
-    const mockOrderDetails = {
-      _id: id,
-      createdAt: new Date(),
-      isPaid: true,
-      isDelivered: true,
-      paymentMethod: "PayPal",
-      shippingMethod: "FedEx",
-      shippingAddress: {
-        city: "New York",
-        country: "United States",
-      },
-      orderItems: [
-        {
-          productId: "1",
-          name: "Product 1",
-          image: "https://picsum.photos/150?random=1",
-          price: "19.99",
-          quantity: 1,
-        },
-        {
-          productId: "2",
-          name: "Product 2",
-          image: "https://picsum.photos/150?random=2",
-          price: "29.99",
-          quantity: 2,
-        },
-      ],
-    };
-    setOrderDetails(mockOrderDetails);
-  }, [id]);
+    dispatch(fetchOrderDetails(id));
+  },[dispatch, id]);
+
+  if (loading) return <h1>Loading...</h1>;
+  if (error) return <h1>Error {error}</h1>;
 
   return (
     <div className="max-w-7xl mx-auto p-4 sm:p-6">
@@ -63,7 +41,7 @@ const OrderDetailsPage = () => {
                 } font-semibold px-3 py-1 rounded-full text-sm mb-2`}
               >
                 {" "}
-                {orderDetails.isPaid ? "Paid" : "Unpaid"}{" "}
+               Order Status:  {orderDetails.isPaid ? "Paid" : "Unpaid"}{" "}
               </span>
 
               <span
@@ -74,7 +52,7 @@ const OrderDetailsPage = () => {
                 } font-semibold px-3 py-1 rounded-full text-sm mb-2`}
               >
                 {" "}
-                {orderDetails.isDelivered ? "Delivered" : "Pending"}{" "}
+                Delivery Status: {orderDetails.isDelivered ? "Delivered" : "Pending"}{" "}
               </span>
             </div>
           </div>
@@ -96,34 +74,43 @@ const OrderDetailsPage = () => {
             </div>
           </div>
           <div className="overflow-x-auto">
-                <h4 className="text-lg font-semibold mb-4">Products</h4>
-                <table className="min-w-full text-gray-600 mb-4">
-                    <thead className="bg-gray-100">
-                        <tr className="text-left">
-                            <th className="px-4 py-2">Name</th>
-                            <th className="px-4 py-2">Price</th>
-                            <th className="px-4 py-2">Quantity</th>
-                            <th className="px-4 py-2">Total</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {orderDetails.orderItems.map((item)=>(
-                            <tr key={item.productId} className="border-b">
-                                <td className="px-2 py-2 flex item-center">
-                                    <img src={item.image} alt={item.name} className="w-12 h-12 object-cover rounded-lg mr-4" />
-                                    <Link to={`/product/${item.productId}`} className="text-blue-600 hover:underline">{item.name}</Link>
-                                </td>
-                                <td className="px-4 py-2">${item.price}</td>
-                                <td className="px-4 py-2">{item.quantity}</td>
-                                <td className="px-4 py-2">${item.price * item.quantity}</td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
+            <h4 className="text-lg font-semibold mb-4">Products</h4>
+            <table className="min-w-full text-gray-600 mb-4">
+              <thead className="bg-gray-100">
+                <tr className="text-left">
+                  <th className="px-4 py-2">Name</th>
+                  <th className="px-4 py-2">Price</th>
+                  <th className="px-4 py-2">Quantity</th>
+                  <th className="px-4 py-2">Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                {orderDetails.orderItems.map((item) => (
+                  <tr key={item.productId} className="border-b">
+                    <td className="px-2 py-2 flex item-center">
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        className="w-12 h-12 object-cover rounded-lg mr-4"
+                      />
+                      <Link
+                        to={`/product/${item.productId}`}
+                        className="text-blue-600 hover:underline"
+                      >
+                        {item.name}
+                      </Link>
+                    </td>
+                    <td className="px-4 py-2">${item.price}</td>
+                    <td className="px-4 py-2">{item.quantity}</td>
+                    <td className="px-4 py-2">${item.price * item.quantity}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
 
           <Link to="/my-orders" className="text-blue-500 hover:underline">
-                        Back to My Orders
+            Back to My Orders
           </Link>
         </div>
       )}

@@ -9,10 +9,20 @@ import {
 import SearchBar from "./SearchBar";
 import CartDrawer from "../Layout/CartDrawer";
 import { IoMdClose } from "react-icons/io";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [navDrawerOpen, setNavDrawerOpen] = useState(false);
+  const { cart } = useSelector((state) => state.cart);
+
+  const { user } = useSelector((state) => state.auth);
+  
+  const cartItemCount =
+  cart?.products?.reduce((total, product) => total + product.quantity, 0) || 0;
+  
+   // console.log(user);
+    // console.log(cartItemCount);
 
   const toggleNavDrawer = () => {
     setNavDrawerOpen(!navDrawerOpen);
@@ -22,7 +32,7 @@ const Navbar = () => {
     setDrawerOpen(!drawerOpen);
   };
 
-  const isAdmin = true;
+ 
 
   return (
     <>
@@ -36,25 +46,25 @@ const Navbar = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-6">
             <Link
-              to="/collections/all"
+              to="/collections/all?gender=Men"
               className="hover:text-black text-gray-700 text-sm font-medium uppercase transition"
             >
               Men
             </Link>
             <Link
-              to="/collections/all"
+              to="/collections/all?gender=Women"
               className="hover:text-black text-gray-700 text-sm font-medium uppercase transition"
             >
               Women
             </Link>
             <Link
-              to="/collections/all"
+              to="/collections/all?category=Top Wear"
               className="hover:text-black text-gray-700 text-sm font-medium uppercase transition"
             >
               Top Wear
             </Link>
             <Link
-              to="/collections/all"
+              to="/collections/all?category=Bottom Wear"
               className="hover:text-black text-gray-700 text-sm font-medium uppercase transition"
             >
               Bottom Wear
@@ -63,7 +73,7 @@ const Navbar = () => {
 
           {/* Desktop navigation */}
           <div className="flex items-center space-x-6">
-            {isAdmin && (
+            {user && user?.role === "admin" && (
               <Link
                 to="/admin"
                 className=" block bg-black px-2 rounded text-white text-sm  uppercase transition"
@@ -80,9 +90,11 @@ const Navbar = () => {
               className="relative hover:text-black transition"
             >
               <HiOutlineShoppingBag className="h-6 w-6 text-gray-700" />
-              <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                3
-              </span>
+              {cartItemCount > 0 && (
+                <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                  {cartItemCount}
+                </span>
+              )}
             </button>
 
             {/* Search */}
@@ -112,28 +124,28 @@ const Navbar = () => {
           <h2 className="text-xl font-semibold mb-4">Menu</h2>
           <nav className="space-y-4">
             <Link
-              to="/collections/all"
+              to="/collections/all?gender=Men"
               onClick={toggleNavDrawer}
               className="block py-2 text-gray-700 hover:text"
             >
               Men
             </Link>
             <Link
-              to="/collections/all"
+              to="/collections/all?gender=Women"
               onClick={toggleNavDrawer}
               className="block py-2 text-gray-700 hover:text"
             >
               Women
             </Link>
             <Link
-              to="/collections/all"
+              to="/collections/all?category=Top Wear"
               onClick={toggleNavDrawer}
               className="block py-2 text-gray-700 hover:text"
             >
               Top Wear
             </Link>
             <Link
-              to="/collections/all"
+              to="/collections/all?category=Bottom Wear"
               onClick={toggleNavDrawer}
               className="block py-2 text-gray-700 hover:text"
             >

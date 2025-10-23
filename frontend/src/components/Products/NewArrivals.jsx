@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useEffect, useRef } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
@@ -10,62 +11,77 @@ const NewArrivals = () => {
   const [canScrollLeft, setCanScrollLeft] = React.useState(false);
   const [canScrollRight, setCanScrollRight] = React.useState(true);
 
-  const newArrivals = [
-    {
-      _id: 1,
-      price: 29.99,
-      name: "T-shirt",
-      images: [
-        "https://picsum.photos/500/500?random=1",
-        "https://picsum.photos/500/500?random=2",
-      ],
-    },
-    {
-      _id: 2,
-      price: 49.99,
-      name: "Jeans",
-      images: [
-        "https://picsum.photos/500/500?random=3",
-        "https://picsum.photos/500/500?random=4",
-      ],
-    },
-    {
-      _id: 3,
-      price: 89.99,
-      name: "Sneakers",
-      images: [
-        "https://picsum.photos/500/500?random=5",
-        "https://picsum.photos/500/500?random=6",
-      ],
-    },
-    {
-      _id: 4,
-      price: 59.99,
-      name: "Hoodie",
-      images: [
-        "https://picsum.photos/500/500?random=7",
-        "https://picsum.photos/500/500?random=8",
-      ],
-    },
-    {
-        _id: 5,
-        price: 39.99,
-        name: "Jacket",
-        images: [
-          "https://picsum.photos/500/500?random=9",
-            "https://picsum.photos/500/500?random=10",
-        ],
-    },
-    {
-        _id: 6,
-        price: 19.99,
-        name: "Cap",
-        images: [
-          "https://picsum.photos/500/500?random=11",
-            "https://picsum.photos/500/500?random=12",
-        ],
+  // const newArrivals = [
+  //   {
+  //     _id: 1,
+  //     price: 29.99,
+  //     name: "T-shirt",
+  //     images: [
+  //       "https://picsum.photos/500/500?random=1",
+  //       "https://picsum.photos/500/500?random=2",
+  //     ],
+  //   },
+  //   {
+  //     _id: 2,
+  //     price: 49.99,
+  //     name: "Jeans",
+  //     images: [
+  //       "https://picsum.photos/500/500?random=3",
+  //       "https://picsum.photos/500/500?random=4",
+  //     ],
+  //   },
+  //   {
+  //     _id: 3,
+  //     price: 89.99,
+  //     name: "Sneakers",
+  //     images: [
+  //       "https://picsum.photos/500/500?random=5",
+  //       "https://picsum.photos/500/500?random=6",
+  //     ],
+  //   },
+  //   {
+  //     _id: 4,
+  //     price: 59.99,
+  //     name: "Hoodie",
+  //     images: [
+  //       "https://picsum.photos/500/500?random=7",
+  //       "https://picsum.photos/500/500?random=8",
+  //     ],
+  //   },
+  //   {
+  //       _id: 5,
+  //       price: 39.99,
+  //       name: "Jacket",
+  //       images: [
+  //         "https://picsum.photos/500/500?random=9",
+  //           "https://picsum.photos/500/500?random=10",
+  //       ],
+  //   },
+  //   {
+  //       _id: 6,
+  //       price: 19.99,
+  //       name: "Cap",
+  //       images: [
+  //         "https://picsum.photos/500/500?random=11",
+  //           "https://picsum.photos/500/500?random=12",
+  //       ],
+  //   }
+  // ];
+
+  const [newArrivals, setNewArrivals] = React.useState([]);
+
+  useEffect(()=>{
+    const fetchNewArrivals = async () => {
+      try {
+        const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/products/getNewArrivals`);
+        setNewArrivals(response.data);
+        // console.log(response.data);
+      } catch (error) {
+        console.log(error);
+      }
     }
-  ];
+    fetchNewArrivals(); 
+  },[])
 
   const scroll = (direction) => {
     const scrollAmount = direction === "left" ? -300 : 300;
@@ -97,7 +113,7 @@ const NewArrivals = () => {
       updateScrollButtons();
       return () => container.removeEventListener("scroll", updateScrollButtons); 
     }
-  },[]);
+  },[newArrivals]);
 
   const handleMouseDown = (e) => {
     setIsDragging(true);
@@ -160,7 +176,7 @@ const NewArrivals = () => {
             className="min-w-[100%] sm:min-w-[50%] lg:min-w-[30%] relative "
           >
             <img
-              src={product.images[0]}
+              src={product.images[0]?.url}
               alt={product.name}
               className="w-full h-[500px] object-cover rounded-lg"
               draggable="false"
