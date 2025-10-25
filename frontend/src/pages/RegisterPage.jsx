@@ -12,7 +12,7 @@ const RegisterPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
-  const { user, guestId } = useSelector((state) => state.auth);
+  const { user, guestId , loading} = useSelector((state) => state.auth);
   const { cart } = useSelector((state) => state.cart.cart);
 
   // Get redirect parameters and check if its checkout or something else
@@ -124,7 +124,7 @@ const RegisterPage = () => {
               className="w-full bg-black hover:bg-gray-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               type="submit"
             >
-              Register
+              {loading ? "Registering..." : "Register"}
             </button>
           </div>
           <p className="text-center text-gray-600 text-sm mt-4">

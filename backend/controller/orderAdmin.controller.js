@@ -14,7 +14,7 @@ const getAllOrders = async (req, res) => {
 // Update order status eg Delivered Processed - Admin
 const updateOrderStatus = async (req, res) => {
     try {
-       const order = await Order.findById(req.params.id);
+       const order = await Order.findById(req.params.id).populate('user', 'name email');
        if(order){
         order.status = req.body.status || order.status;
         order.isDelivered = req.body.status === "Delivered" ? true : order.isDelivered;

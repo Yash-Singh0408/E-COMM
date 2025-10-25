@@ -1,32 +1,35 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { deleteProduct, fetchAdminProducts } from "../../redux/slices/adminProductSlice";
 
 const ProductManagement = () => {
-  const products = [
-    {
-      _id: 1,
-      name: "T-shirt",
-      price: "19.99",
-      size: "M",
-      color: "Red",
-      sku: "ABC123",
-      image: "https://picsum.photos/200?random=1",
-    },
-    {
-      _id: 2,
-      name: "Jeans",
-      price: "49.99",
-      size: "32",
-      color: "Blue",
-      sku: "DEF456",
-      image: "https://picsum.photos/200?random=2",
-    },
-  ];
+  
+  const dispatch= useDispatch();
+  const navigate = useNavigate();
+  const { products , loading , error } = useSelector((state) => state.adminProducts);
+  const {user} = useSelector((state) => state.auth);
+
+  useEffect(()=>{
+    if(!user || user.role !== "admin"){
+      navigate("/")
+    }else{
+      dispatch(fetchAdminProducts())
+    }
+  },[dispatch , navigate , user])
 
   const handleDelete = (id)=>{
     if(window.confirm("Are you sure you want to delete this product?")){
-        console.log("Product deleted", id);
+       dispatch(deleteProduct(id));
     }
+  }
+
+  if(loading){
+    return <div>Loading...</div>
+  }
+
+  if(error){
+    return <div>Error: {error}</div>
   }
 
   return (
@@ -49,7 +52,7 @@ const ProductManagement = () => {
                         <td className="p-4 font-medium text-gray-900 whitespace-nowrap">
                             {product.name}
                         </td>
-                        <td className="p-4">${product.price}</td>
+                        <td className="p-4">${product.price.toFixed(2)}</td>
                         <td className="p-4">{product.sku}</td>
                         <td className="p-4">
                             <Link to={`/admin/products/${product._id}/edit`} className="bg-yellow-500 text-white px-2 py-1 rounded mr-2 hover:bg-yellow-600">
