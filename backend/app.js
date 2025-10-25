@@ -12,6 +12,7 @@ import subscriberRoute from "./routes/subscriber.route.js";
 import adminRoute from "./routes/admin.route.js";
 import productAdminRoute from "./routes/productAdmin.route.js";
 import orderAdminRoute from "./routes/orderAdmin.route.js";
+dotenv.config();
 
 // Initialize
 const app = express();
@@ -21,7 +22,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(
-  cors({
+    cors({
     origin: [
       "https://e-comm-kygv.vercel.app", // ✅ your frontend domain
       "http://localhost:5173"           // ✅ optional: allow local dev
@@ -31,7 +32,6 @@ app.use(
   })
 );
 
-dotenv.config();
 
 //Port
 const port = process.env.PORT || 8000;
