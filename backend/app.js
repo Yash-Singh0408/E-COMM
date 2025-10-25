@@ -24,7 +24,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(
     cors({
     origin: [
-      "https://e-comm-kygv.vercel.app", // ✅ your frontend domain
+      "https://e-comm-cz7c.vercel.app", // ✅ your frontend domain
       "http://localhost:5173"           // ✅ optional: allow local dev
     ],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
