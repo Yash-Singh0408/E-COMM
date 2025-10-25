@@ -19,7 +19,18 @@ const app = express();
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
+
+app.use(
+  cors({
+    origin: [
+      "https://e-comm-kygv.vercel.app", // ✅ your frontend domain
+      "http://localhost:5173"           // ✅ optional: allow local dev
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    credentials: true, // if you use cookies or auth headers
+  })
+);
+
 dotenv.config();
 
 //Port
@@ -27,6 +38,11 @@ const port = process.env.PORT || 8000;
 
 // Connection to db
 connectDB();
+
+// Test toute at home
+app.get("/", (req, res) => {
+  res.send("Hello from Yash");
+});
 
 // Api routes
 app.use("/api/users", userRoute);
