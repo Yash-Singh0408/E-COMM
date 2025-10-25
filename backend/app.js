@@ -41,6 +41,7 @@ connectDB();
 
 // Test toute at home
 app.get("/", (req, res) => {
+  res.status(200);
   res.send("Hello from Yash");
 });
 
