@@ -4,6 +4,7 @@ import Product from "./models/Product.model.js";
 import User from "./models/User.model.js";
 import products from "./data/product.data.js";
 import Cart from "./models/Cart.model.js";
+import products2 from "./data/product2.data.js";
 
 dotenv.config();
 

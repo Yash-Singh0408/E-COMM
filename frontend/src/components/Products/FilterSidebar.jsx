@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
+import { motion } from "framer-motion";
+import { Check } from "lucide-react";
 
 const FilterSidebar = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
+
   const [filters, setFilters] = useState({
     category: "",
     gender: "",
@@ -11,13 +14,24 @@ const FilterSidebar = () => {
     size: [],
     material: [],
     brand: [],
+    collection: [],
     minPrice: 0,
-    maxPrice: 100,
+    maxPrice: 1000,
   });
 
-  const [priceRange, setPriceRange] = useState([0, 100]);
+  const [priceRange, setPriceRange] = useState([0, 1000]);
 
-  const categories = ["Top Wear", "Bottom Wear"];
+  // ✅ Updated data based on your product.data.js
+  const categories = [
+    "Top Wear",
+    "Bottom Wear",
+    "Outerwear",
+    "Footwear",
+    "Accessories",
+    "Athleisure",
+  ];
+
+  const genders = ["Men", "Women", "Unisex"];
 
   const colors = [
     "Red",
@@ -30,6 +44,9 @@ const FilterSidebar = () => {
     "Pink",
     "Beige",
     "Navy",
+    "Brown",
+    "Olive",
+    "Mustard",
   ];
 
   const sizes = ["XS", "S", "M", "L", "XL", "XXL"];
@@ -42,19 +59,47 @@ const FilterSidebar = () => {
     "Silk",
     "Linen",
     "Viscose",
-    "Fleece",
+    "Leather",
+    "Nylon",
   ];
 
   const brands = [
-    "Urban Trends",
-    "Modern Fit",
-    "Street Style",
-    "Beach Breeze",
-    "Fashionista",
-    "ChicStyle",
+    "NovaWear",
+    "VelvetPeak",
+    "BoldNove",
+    "CoreStreet",
+    "Modeify",
+    "EchoLane",
+    "Trendora",
+    "Luxora",
+    "UrbanThread",
   ];
 
-  const genders = ["Men", "Women"];
+  const collections = [
+    "Casual Street",
+    "Winter Vibes",
+    "Denim Collection",
+    "Vacation Wear",
+    "Activewear",
+    "Urban Essentials",
+    "Formal Fits",
+  ];
+
+  const colorMap = {
+    Red: "#FF4136",
+    Blue: "#0074D9",
+    Black: "#000000",
+    Green: "#228B22",
+    Yellow: "#FFD700",
+    Gray: "#808080",
+    White: "#FFFFFF",
+    Pink: "#FFC0CB",
+    Beige: "#F5F5DC",
+    Navy: "#001f3f",
+    Brown: "#8B4513",
+    Olive: "#808000",
+    Mustard: "#E1AD01",
+  };
 
   useEffect(() => {
     const params = Object.fromEntries([...searchParams]);
@@ -65,29 +110,38 @@ const FilterSidebar = () => {
       size: params.size ? params.size.split(",") : [],
       material: params.material ? params.material.split(",") : [],
       brand: params.brand ? params.brand.split(",") : [],
+      collection: params.collection ? params.collection.split(",") : [],
       minPrice: params.minPrice || 0,
-      maxPrice: params.maxPrice || 100,
+      maxPrice: params.maxPrice || 1000,
     });
-    setPriceRange([0, params.maxPrice || 100]);
+    setPriceRange([0, params.maxPrice || 1000]);
   }, [searchParams]);
 
   const handleFilterChange = (e) => {
     const { name, value, checked, type } = e.target;
-    // console.log({name, value, checked, type});
     let newFilters = { ...filters };
 
+    // Handle checkbox filters (size, material, brand, collection)
     if (type === "checkbox") {
       if (checked) {
         newFilters[name] = [...(newFilters[name] || []), value];
       } else {
         newFilters[name] = newFilters[name].filter((item) => item !== value);
       }
+    }
+    // Handle radio-like filters that should be toggleable
+    else if (name === "category" || name === "gender") {
+      newFilters[name] = filters[name] === value ? "" : value;
+    }
+    // Handle color (toggle)
+    else if (name === "color") {
+      newFilters[name] = filters.color === value ? "" : value;
     } else {
       newFilters[name] = value;
     }
+
     setFilters(newFilters);
     updateURLParams(newFilters);
-    // console.log(newFilters);
   };
 
   const updateURLParams = (newFilters) => {
@@ -107,145 +161,285 @@ const FilterSidebar = () => {
     const newPrice = e.target.value;
     setPriceRange([0, newPrice]);
     const newFilters = { ...filters, minPrice: 0, maxPrice: newPrice };
-    setFilters(filters);
+    setFilters(newFilters);
     updateURLParams(newFilters);
   };
 
-  return (
-    <div className="p-4">
-      <h3 className="text-xl font-medium text-gray-800 mb-4">Filter</h3>
+  const clearAllFilters = () => {
+    setFilters({
+      category: "",
+      gender: "",
+      color: "",
+      size: [],
+      material: [],
+      brand: [],
+      collection: [],
+      minPrice: 0,
+      maxPrice: 1000,
+    });
+    setPriceRange([0, 1000]);
+    setSearchParams(new URLSearchParams());
+    navigate("");
+  };
 
-      {/* Category Filter */}
-      <div className="mb-6">
-        <label className="block text-gray-700 font-medium mb-2">Category</label>
-        {categories.map((category) => (
-          <div key={category} className="flex item-center mb-1">
-            <input
-              type="radio"
+  const hasActiveFilters =
+    filters.category ||
+    filters.gender ||
+    filters.color ||
+    filters.size.length > 0 ||
+    filters.material.length > 0 ||
+    filters.brand.length > 0 ||
+    filters.collection.length > 0 ||
+    filters.maxPrice !== 1000;
+
+  return (
+    <motion.div
+      initial={{ x: -20, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ duration: 0.4, ease: "easeInOut" }}
+      className="p-6 h-full bg-[var(--color-bg)] border-r border-[var(--color-border)] overflow-y-auto custom-scroll"
+    >
+      {/* Header */}
+      <div className="flex items-center justify-between mb-6 pb-4 border-b border-[var(--color-border)]">
+        <h3 className="text-lg font-semibold text-[var(--color-text-primary)] tracking-wide">
+          FILTERS
+        </h3>
+        {hasActiveFilters && (
+          <button
+            onClick={clearAllFilters}
+            className="text-xs text-[var(--color-accent)] hover:opacity-80 transition-colors font-medium tracking-wide"
+          >
+            CLEAR ALL
+          </button>
+        )}
+      </div>
+
+      {/* Filter Sections */}
+      <div className="space-y-6">
+        {/* CATEGORY */}
+        <FilterSection title="CATEGORY">
+          {categories.map((category) => (
+            <RadioOption
+              key={category}
               name="category"
               value={category}
-              onChange={handleFilterChange}
               checked={filters.category === category}
-              className="mr-2 h-4 w-4 accent-blue-500 focus:ring-blue-500 border-gray-300"
+              onChange={handleFilterChange}
+              label={category}
             />
-            <span className="text-gray-700">{category}</span>
-          </div>
-        ))}
-      </div>
+          ))}
+        </FilterSection>
 
-      {/* Gender Filter */}
-      <div className="mb-6">
-        <label className="block text-gray-600 font-medium mb-2">Gender</label>
-        {genders.map((gender) => (
-          <div key={gender} className="flex item-center mb-1">
-            <input
-              type="radio"
+        {/* GENDER */}
+        <FilterSection title="GENDER">
+          {genders.map((gender) => (
+            <RadioOption
+              key={gender}
               name="gender"
               value={gender}
-              onChange={handleFilterChange}
               checked={filters.gender === gender}
-              className="mr-2 h-4 w-4 accent-blue-500  focus:ring-blue-500 border-gray-300"
-            />
-            <span className="text-gray-700">{gender}</span>
-          </div>
-        ))}
-      </div>
-
-      {/* Color Filter */}
-      <div className="mb-6">
-        <label className="block text-gray-700 font-medium mb-2">Color</label>
-        <div className="flex flex-wrap gap-2">
-          {colors.map((color) => (
-            <button
-              key={color}
-              name="color"
-              title={color}
-              value={color}
-              onClick={handleFilterChange}
-              className={`h-8 w-8 rounded-full border border-gray-300 cursor-pointer transition hover:scale-105 ${
-                filters.color === color ? "ring-2 ring-blue-500" : ""
-              }`}
-              style={{ backgroundColor: color.toLowerCase() }}
-            ></button>
-          ))}
-        </div>
-      </div>
-
-      {/* Size Filter */}
-      <div className="mb-6">
-        <label className="block text-gray-700 font-medium mb-2">Size</label>
-        {sizes.map((size) => (
-          <div key={size} className="flex item-center mb-1">
-            <input
-              type="checkbox"
-              name="size"
-              value={size}
               onChange={handleFilterChange}
-              checked={filters.size.includes(size)}
-              className="mr-2 h-4 w-4 accent-blue-500 focus:ring-blue-500 border-gray-300"
+              label={gender}
             />
-            <span className="text-gray-700">{size}</span>
-          </div>
-        ))}
-      </div>
+          ))}
+        </FilterSection>
 
-      {/* Material Filter */}
-      <div className="mb-6">
-        <label className="block text-gray-700 font-medium mb-2">Material</label>
-        {materials.map((material) => (
-          <div key={material} className="flex item-center mb-1">
-            <input
-              type="checkbox"
+        {/* COLOR */}
+        <FilterSection title="COLOR">
+          <div className="flex flex-wrap gap-2">
+            {colors.map((color) => (
+              <button
+                key={color}
+                name="color"
+                value={color}
+                onClick={() =>
+                  handleFilterChange({
+                    target: { name: "color", value: color },
+                  })
+                }
+                title={color}
+                className={`relative w-9 h-9 rounded-sm border-2 transition-all hover:scale-110 ${
+                  filters.color === color
+                    ? "border-[var(--color-accent)] scale-110"
+                    : "border-[var(--color-border)]"
+                }`}
+                style={{ backgroundColor: colorMap[color] }}
+              >
+                {filters.color === color && (
+                  <Check
+                    className="w-5 h-5 text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                    strokeWidth={3}
+                  />
+                )}
+              </button>
+            ))}
+          </div>
+        </FilterSection>
+
+        {/* SIZE */}
+        <FilterSection title="SIZE">
+          <div className="grid grid-cols-3 gap-2">
+            {sizes.map((size) => (
+              <CheckboxOption
+                key={size}
+                name="size"
+                value={size}
+                checked={filters.size.includes(size)}
+                onChange={handleFilterChange}
+                label={size}
+              />
+            ))}
+          </div>
+        </FilterSection>
+
+        {/* MATERIAL */}
+        <FilterSection title="MATERIAL" scroll>
+          {materials.map((material) => (
+            <CheckboxOption
+              key={material}
               name="material"
               value={material}
-              onChange={handleFilterChange}
               checked={filters.material.includes(material)}
-              className="mr-2 h-4 w-4 accent-blue-500 focus:ring-blue-500 border-gray-300"
+              onChange={handleFilterChange}
+              label={material}
             />
-            <span className="text-gray-700">{material}</span>
-          </div>
-        ))}
-      </div>
+          ))}
+        </FilterSection>
 
-      {/* Brand Filter */}
-      <div className="mb-6">
-        <label className="block text-gray-700 font-medium mb-2">Brand</label>
-        {brands.map((brand) => (
-          <div key={brand} className="flex item-center mb-1">
-            <input
-              type="checkbox"
+        {/* BRAND */}
+        <FilterSection title="BRAND" scroll>
+          {brands.map((brand) => (
+            <CheckboxOption
+              key={brand}
               name="brand"
               value={brand}
-              onChange={handleFilterChange}
               checked={filters.brand.includes(brand)}
-              className="mr-2 h-4 w-4 accent-blue-500 focus:ring-blue-500 border-gray-300"
+              onChange={handleFilterChange}
+              label={brand}
             />
-            <span className="text-gray-700">{brand}</span>
-          </div>
-        ))}
-      </div>
+          ))}
+        </FilterSection>
 
-      {/* Price Range Filter */}
-      <div className="mb-8">
-        <label className="block text-gray-700 font-medium mb-2">
-          Price Range
-        </label>
-        <input
-          type="range"
-          name="minPrice"
-          min={0}
-          max={100}
-          value={priceRange[1]}
-          onChange={handlePriceChange}
-          className="h-2 w-full bg-gray-300 rounded-lg appearance-none cursor-pointer accent-blue-500 focus:ring-blue-500 border-gray-300"
-        />
-        <div className="flex justify-between text-gray-600 mt-2">
-          <span>$0</span>
-          <span>${priceRange[1]}</span>
-        </div>
+        {/* COLLECTION */}
+        <FilterSection title="COLLECTION" scroll>
+          {collections.map((collection) => (
+            <CheckboxOption
+              key={collection}
+              name="collection"
+              value={collection}
+              checked={filters.collection.includes(collection)}
+              onChange={handleFilterChange}
+              label={collection}
+            />
+          ))}
+        </FilterSection>
+
+        {/* PRICE */}
+        <FilterSection title="PRICE RANGE">
+          <input
+            type="range"
+            min={0}
+            max={1000}
+            value={priceRange[1]}
+            onChange={handlePriceChange}
+            className="w-full h-2 rounded-lg appearance-none cursor-pointer accent-[var(--color-accent)] bg-[var(--color-bg-highlight)]"
+            style={{
+              background: `linear-gradient(to right, var(--color-accent) 0%, var(--color-accent) ${priceRange[1]}%, var(--color-bg-highlight) ${priceRange[1]}%, var(--color-bg-highlight) 100%)`,
+            }}
+          />
+          <div className="flex justify-between items-center mt-3">
+            <span className="text-sm text-[var(--color-text-secondary)]">
+              $0
+            </span>
+            <span className="text-sm font-semibold text-[var(--color-accent)]">
+              ${priceRange[1]}
+            </span>
+          </div>
+        </FilterSection>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
 export default FilterSidebar;
+
+/* ---------- Reusable Subcomponents ---------- */
+
+const FilterSection = ({ title, children, scroll = false }) => (
+  <div
+    className={`pb-6 border-b border-[var(--color-border)] ${
+      scroll ? "max-h-48 overflow-y-auto custom-scroll" : ""
+    }`}
+  >
+    <label className="block text-sm font-medium text-[var(--color-text-primary)] mb-3 tracking-wide">
+      {title}
+    </label>
+    {children}
+  </div>
+);
+
+const RadioOption = ({ name, value, checked, onChange, label }) => (
+  <label className="flex items-center cursor-pointer group space-x-2">
+    <input
+      type="radio"
+      name={name}
+      value={value}
+      onChange={onChange}
+      checked={checked}
+      className="sr-only"
+    />
+    <span
+      className={`w-4 h-4 rounded-full border-2 flex items-center justify-center transition-all ${
+        checked
+          ? "border-[var(--color-accent)] bg-[var(--color-accent)]"
+          : "border-[var(--color-border)] group-hover:border-[var(--color-accent)]"
+      }`}
+    >
+      {checked && (
+        <span className="w-2 h-2 bg-[var(--color-bg)] rounded-full" />
+      )}
+    </span>
+    <span
+      className={`text-sm transition-colors ${
+        checked
+          ? "text-[var(--color-text-primary)] font-medium"
+          : "text-[var(--color-text-secondary)] group-hover:text-[var(--color-text-primary)]"
+      }`}
+    >
+      {label}
+    </span>
+  </label>
+);
+
+const CheckboxOption = ({ name, value, checked, onChange, label }) => (
+  <label className="flex items-center cursor-pointer group">
+    <input
+      type="checkbox"
+      name={name}
+      value={value}
+      onChange={onChange}
+      checked={checked}
+      className="sr-only"
+    />
+    <span
+      className={`w-4 h-4 rounded-sm border-2 mr-3 flex items-center justify-center transition-all ${
+        checked
+          ? "border-[var(--color-accent)] bg-[var(--color-accent)]"
+          : "border-[var(--color-border)] group-hover:border-[var(--color-accent)]"
+      }`}
+    >
+      {checked && (
+        <Check className="w-3 h-3 text-[var(--color-bg)]" strokeWidth={3} />
+      )}
+    </span>
+    <span
+      className={`text-sm transition-colors ${
+        checked
+          ? "text-[var(--color-text-primary)] font-medium"
+          : "text-[var(--color-text-secondary)] group-hover:text-[var(--color-text-primary)]"
+      }`}
+    >
+      {label}
+    </span>
+  </label>
+);

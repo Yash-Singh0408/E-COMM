@@ -1,7 +1,33 @@
 @import "tailwindcss";
 
 @theme {
-  --color-topbar: #ea2e0e;
+  /* 🌑 Base */
+  --color-bg: #0b0b0b;
+  --color-bg-secondary: #141414;  /* dark gray */
+  --color-accent: #ea2e0e;  /* warm red */
+  --color-bg-highlight: #1e1e1e;  /* even darker gray */
+
+  /* 🩶 Text */
+  --color-text-primary: #f5f5f5;  /* light gray */
+  --color-text-secondary: #b3b3b3;  /* medium gray */
+
+  /* 🎯 Accent (you can swap this tone to match your brand) */
+  --color-accent: #d6a354; /* warm gold */
+  /* alternative options:
+     --color-accent: #ec625f; (modern coral)
+     --color-accent: #2563eb; (cool blue)
+  */
+
+  /* ⚫ Navbar & Overlay */
+  --color-navbar: rgba(15, 15, 15, 0.8);
+  --color-overlay: rgba(0, 0, 0, 0.6);
+
+  /* 🧥 Border & Lines */
+  --color-border: #2a2a2a;
+
+  /* 🔥 Utility */
+  --color-success: #16a34a;
+  --color-error: #dc2626;
 }
 
 /* Scrollbar CSS */
@@ -46,4 +72,12 @@
 .custom-scroll {
   scrollbar-width: thin;
   scrollbar-color: #888 #f1f1f1;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }

@@ -11,6 +11,9 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { fetchProductsByFilters } from "../redux/slices/productsSlice";
 import axios from "axios";
+import { Link } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -21,10 +24,12 @@ const HomePage = () => {
     dispatch(
       fetchProductsByFilters({
         gender: "Women",
-        category: "Bottom Wear",
+        category: "Top Wear",
         limit: 8,
       })
     );
+
+    console.log(products);
     // fetch best seller
     const fetchBestSeller = async () => {
       try {
@@ -41,31 +46,95 @@ const HomePage = () => {
     fetchBestSeller();
   }, [dispatch]);
 
-  // if (bestSellerProduct) {
-  //   console.log(bestSellerProduct[0]._id);
-  // }
+  console.log(bestSellerProduct);
+
   return (
     <div>
+      {/* Hero Section with background image  */}
       <Hero />
+
+      {/* A women and men picture with links to their collections */}
       <GenderCollectionSection />
+
+      {/* New Arrivals data fetched by date of creation */}
       <NewArrivals />
 
-      <h2 className="text-3xl text-center font-bold  mb-3">Best Sellers</h2>
-      {bestSellerProduct ? (
-        <ProductDetails productId={bestSellerProduct[0]._id} />
-      ) : (
-        <p className="text-center">Loading best sellers...</p>
-      )}
+      {/* Best Sellers Section */}
+      <section className=" text-gray-100 mb-12">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl sm:text-5xl font-extrabold mb-3 text-white bg-clip-text  drop-shadow-md">
+            Best <span className="text-[#d6a354]">Sellers</span>
+          </h2>
+          <p className="text-gray-400 text-base sm:text-lg">
+            Discover what everyone’s loving this season.
+          </p>
+        </div>
 
-      <div className="container mx-auto">
-        <h2 className="text-3xl text-center font-bold mb-4">
-          Women Products of the Week
-        </h2>
-        <ProductGrid products={products} loading={loading} error={error} />
-      </div>
+        {bestSellerProduct ? (
+          <ProductDetails productId={bestSellerProduct[0]._id} isBestSeller />
+        ) : (
+          <p className="text-center text-gray-500">Loading best sellers...</p>
+        )}
+      </section>
 
-      <FeaturedCollection />
       <FeaturesSection />
+
+      {/* Women Products */}
+      <section className="relative py-20 sm:py-24 bg-[#0b0b0b] text-white overflow-hidden">
+        <div className="container mx-auto px-4">
+          {/* Animated Header */}
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+            viewport={{ once: true }}
+          >
+            <p className="text-xs tracking-[0.2em] uppercase text-[#b3b3b3] mb-4">
+              Featured Collection
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 tracking-tight text-[#f5f5f5]">
+              Women Products of the <span className="text-[#d6a354]">Week</span>
+            </h2>
+            <motion.div
+              className="mx-auto w-24 h-[2px] bg-[#d6a354] rounded-full"
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              viewport={{ once: true }}
+            />
+          </motion.div>
+
+          {/* Animated Product Grid */}
+          <motion.div
+            initial={{ opacity: 0, y: 80 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            <ProductGrid products={products} loading={loading} error={error} />
+          </motion.div>
+
+          {/* View All Button */}
+          <motion.div
+            className="text-center mt-12"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <Link
+              to="/collections/all?gender=Women"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-[#d6a354] text-[#0b0b0b] rounded-sm font-semibold hover:bg-[#e0b366] transition text-sm sm:text-base"
+            >
+              View All Women Products
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+      {/* Dummy section  */}
+      <FeaturedCollection />
     </div>
   );
 };

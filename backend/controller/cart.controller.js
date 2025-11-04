@@ -31,7 +31,7 @@ const addGuestUserProduct = async (req, res) => {
           productId,
           name: product.name,
           image: product.images[0].url,
-          price: product.price,
+          price: product.discountPrice,
           size,
           color,
           quantity,

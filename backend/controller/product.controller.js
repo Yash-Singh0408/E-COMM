@@ -228,7 +228,7 @@ const getProducts = async (req, res) => {
 // Get the best selling product
 const getBestSellingProduct = async (req, res) => {
   try {
-    const bestSellers = await Product.find().sort({ rating: -1 }).limit(3);
+    const bestSellers = await Product.find().sort({ rating: -1 }).limit(1);
 
     if (bestSellers.length > 0) {
       res.json(bestSellers);

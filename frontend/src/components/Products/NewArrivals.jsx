@@ -1,195 +1,248 @@
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import React, { useEffect, useRef } from "react";
-import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const NewArrivals = () => {
-  const scrollRef = useRef(null);
-  const [isDragging, setIsDragging] = React.useState(false);
-  const [startX, setStartX] = React.useState(0);
-  const [scrollLeft, setScrollLeft] = React.useState(0);
-  const [canScrollLeft, setCanScrollLeft] = React.useState(false);
-  const [canScrollRight, setCanScrollRight] = React.useState(true);
+  const [newArrivals, setNewArrivals] = useState([]);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [direction, setDirection] = useState(0);
 
-  // const newArrivals = [
-  //   {
-  //     _id: 1,
-  //     price: 29.99,
-  //     name: "T-shirt",
-  //     images: [
-  //       "https://picsum.photos/500/500?random=1",
-  //       "https://picsum.photos/500/500?random=2",
-  //     ],
-  //   },
-  //   {
-  //     _id: 2,
-  //     price: 49.99,
-  //     name: "Jeans",
-  //     images: [
-  //       "https://picsum.photos/500/500?random=3",
-  //       "https://picsum.photos/500/500?random=4",
-  //     ],
-  //   },
-  //   {
-  //     _id: 3,
-  //     price: 89.99,
-  //     name: "Sneakers",
-  //     images: [
-  //       "https://picsum.photos/500/500?random=5",
-  //       "https://picsum.photos/500/500?random=6",
-  //     ],
-  //   },
-  //   {
-  //     _id: 4,
-  //     price: 59.99,
-  //     name: "Hoodie",
-  //     images: [
-  //       "https://picsum.photos/500/500?random=7",
-  //       "https://picsum.photos/500/500?random=8",
-  //     ],
-  //   },
-  //   {
-  //       _id: 5,
-  //       price: 39.99,
-  //       name: "Jacket",
-  //       images: [
-  //         "https://picsum.photos/500/500?random=9",
-  //           "https://picsum.photos/500/500?random=10",
-  //       ],
-  //   },
-  //   {
-  //       _id: 6,
-  //       price: 19.99,
-  //       name: "Cap",
-  //       images: [
-  //         "https://picsum.photos/500/500?random=11",
-  //           "https://picsum.photos/500/500?random=12",
-  //       ],
-  //   }
-  // ];
-
-  const [newArrivals, setNewArrivals] = React.useState([]);
-
-  useEffect(()=>{
+  // ✅ Fetch from your backend API
+  useEffect(() => {
     const fetchNewArrivals = async () => {
       try {
-        const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/products/getNewArrivals`);
+        const response = await axios.get(
+          `${import.meta.env.VITE_BACKEND_URL}/api/products/getNewArrivals`
+        );
         setNewArrivals(response.data);
-        // console.log(response.data);
       } catch (error) {
-        console.log(error);
+        console.error("Error fetching new arrivals:", error);
       }
-    }
-    fetchNewArrivals(); 
-  },[])
+    };
+    fetchNewArrivals();
+  }, []);
 
-  const scroll = (direction) => {
-    const scrollAmount = direction === "left" ? -300 : 300;
-    scrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+  const nextSlide = () => {
+    setDirection(1);
+    setActiveIndex((prev) =>
+      newArrivals.length > 0 ? (prev + 1) % newArrivals.length : 0
+    );
   };
 
-  //   UseEffect for scroll buttons
-  const updateScrollButtons = () => {
-    const container = scrollRef.current;
-    if (container) {
-      const leftScroll = container.scrollLeft;
-      const rightScrollable =
-        container.scrollWidth - container.clientWidth - leftScroll > 1;
-      setCanScrollLeft(leftScroll > 0);
-      setCanScrollRight(rightScrollable);
-    }
-
-    // console.log({
-    //   scrollLeft: container.scrollLeft,
-    //   clientWidth: container.clientWidth,
-    //   containerScrollWidth: container.scrollWidth,
-    // });
+  const prevSlide = () => {
+    setDirection(-1);
+    setActiveIndex((prev) =>
+      newArrivals.length > 0
+        ? prev === 0
+          ? newArrivals.length - 1
+          : prev - 1
+        : 0
+    );
   };
 
-  useEffect(() => {
-    const container = scrollRef.current;
-    if (container) {
-      container.addEventListener("scroll", updateScrollButtons);
-      updateScrollButtons();
-      return () => container.removeEventListener("scroll", updateScrollButtons); 
-    }
-  },[newArrivals]);
-
-  const handleMouseDown = (e) => {
-    setIsDragging(true);
-    setStartX(e.pageX - scrollRef.current.offsetLeft);
-    setScrollLeft(scrollRef.current.scrollLeft);
-  }
-
-  const handleMouseMove = (e) => {
-    if (!isDragging) return;
-    const x = e.pageX - scrollRef.current.offsetLeft;
-    const walk = x - startX;
-    scrollRef.current.scrollLeft = scrollLeft - walk;
-  }
-
-  const handleMouseUpOrLeave = () => {
-    setIsDragging(false);
+  if (newArrivals.length === 0) {
+    return (
+      <section className="py-24 bg-[#0b0b0b] text-white text-center">
+        <p className="text-gray-400 text-lg">Loading new arrivals...</p>
+      </section>
+    );
   }
 
   return (
-    <section className="py-16 px-4 lg:px-6">
-      <div className="container mx-auto text-center mb-10 relative">
-        <h2 className="text-3xl font-bold mb-4">Explore new arrivals</h2>
-        <p className="text-lg text-gray-600 mb-8">
-          Discover the latest trends in fashion and elevate your style with our
-          new arrivals collection
-        </p>
+    <section className="relative py-24 bg-[#0b0b0b] text-white overflow-hidden">
+      {/* Subtle background accent */}
+      <motion.div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#d6a354]/5 rounded-full blur-[150px]"
+        animate={{
+          scale: [1, 1.1, 1],
+          opacity: [0.3, 0.5, 0.3],
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
 
-        {/* Button  */}
-        <div className="absolute right-0 bottom-[-30px] flex space-x-2 px-3">
-          <button
-            onClick={() => scroll("left")}
-            disabled={!canScrollLeft}
-            className={`p-2 rounded border ${canScrollLeft ? "bg-white text-black" : "bg-gray-200 text-gray-400"} `}
-          >
-            <FiChevronLeft className="text-2xl" />
-          </button>
-          <button
-            onClick={() => scroll("right")}
-            disabled={!canScrollRight}
-            className={`p-2 rounded border ${canScrollRight ? "bg-white text-black" : "bg-gray-200 text-gray-400"} `}
-          >
-            <FiChevronRight className="text-2xl" />
-          </button>
-        </div>
+      {/* Header */}
+      <div className="container mx-auto text-center mb-16 px-4">
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-xs tracking-[0.2em] uppercase text-[#b3b3b3] mb-4"
+        >
+          Latest Drops
+        </motion.p>
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          viewport={{ once: true }}
+          className="text-4xl sm:text-5xl font-bold mb-4"
+        >
+          New <span className="text-[#d6a354]">Arrivals</span>
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-[#b3b3b3] max-w-2xl mx-auto text-base"
+        >
+          Fresh drops. Curated styles. Exclusive pieces.
+        </motion.p>
       </div>
 
-      {/* Scrollable Cards */}
-      <div
-        ref={scrollRef}
-        className={`container mx-auto overflow-x-scroll flex space-x-6 relative custom-scroll px-3 ${isDragging ? "cursor-grabbing" : "cursor-grab" }`}
-        onMouseDown={handleMouseDown}
-        onMouseMove={handleMouseMove}
-        onMouseUp={handleMouseUpOrLeave}
-        onMouseLeave={handleMouseUpOrLeave}
-
+      {/* Carousel Controls */}
+      <button
+        onClick={prevSlide}
+        className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-sm bg-[#141414] hover:bg-[#1e1e1e] border border-[#2a2a2a] transition z-20 group"
       >
-        {newArrivals.map((product) => (
-          <div
-            key={product._id}
-            className="min-w-[100%] sm:min-w-[50%] lg:min-w-[30%] relative "
-          >
-            <img
-              src={product.images[0]?.url}
-              alt={product.name}
-              className="w-full h-[500px] object-cover rounded-lg"
-              draggable="false"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-opacity-50 backdrop-blur-md text-white p-4 rounded-b-lg">
-              <Link to={`/product/${product._id}`} className="block">
-                <h4 className="font-medium">{product.name}</h4>
-                <p className="mt-1">${product.price}</p>
-              </Link>
-            </div>
-          </div>
+        <ChevronLeft className="text-xl text-[#b3b3b3] group-hover:text-[#d6a354] transition" />
+      </button>
+
+      <button
+        onClick={nextSlide}
+        className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-sm bg-[#141414] hover:bg-[#1e1e1e] border border-[#2a2a2a] transition z-20 group"
+      >
+        <ChevronRight className="text-xl text-[#b3b3b3] group-hover:text-[#d6a354] transition" />
+      </button>
+
+      {/* 3D Carousel */}
+      <div
+        className="relative w-full h-[500px] flex items-center justify-center"
+        style={{ perspective: "1200px" }}
+      >
+        {newArrivals.map((product, i) => {
+          const total = newArrivals.length;
+          const offset = (i - activeIndex + total) % total;
+          const middle = Math.floor(total / 2);
+          const relative = offset > middle ? offset - total : offset;
+
+          const isMobile =
+            typeof window !== "undefined" && window.innerWidth < 640;
+          const angle = relative * (isMobile ? 15 : 25);
+          const translateX = relative * (isMobile ? 180 : 300);
+          const translateZ = -Math.abs(relative) * (isMobile ? 100 : 250);
+          const scale = 1 - Math.abs(relative) * 0.15;
+          const opacity = relative === 0 ? 1 : 0.4;
+          const zIndex = 100 - Math.abs(relative) * 10;
+
+          return (
+            <motion.div
+              key={product._id}
+              className="absolute w-56 sm:w-72 h-[380px] sm:h-[450px] rounded-sm overflow-hidden border border-[#2a2a2a]"
+              style={{
+                transform: `
+                  translateX(${translateX}px)
+                  translateZ(${translateZ}px)
+                  rotateY(${angle}deg)
+                  scale(${scale})
+                `,
+                opacity,
+                zIndex,
+                transition: "all 0.7s cubic-bezier(0.25, 1, 0.5, 1)",
+                transformOrigin: "center center",
+                backgroundColor: "#141414",
+              }}
+            >
+              <div className="relative group w-full h-full">
+                <div className="w-full h-3/4 overflow-hidden">
+                  <img
+                    src={product.images?.[0]?.url}
+                    alt={product.name}
+                    className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                    draggable="false"
+                  />
+                </div>
+
+                {/* NEW Badge - only on center item */}
+                {relative === 0 && (
+                  <motion.div
+                    initial={{ scale: 0, rotate: -90 }}
+                    animate={{ scale: 1, rotate: 0 }}
+                    transition={{ duration: 0.5, type: "spring" }}
+                    className="absolute top-4 right-4 bg-[#d6a354] text-[#0b0b0b] text-xs font-bold px-3 py-1 rounded-sm"
+                  >
+                    NEW
+                  </motion.div>
+                )}
+
+                {/* Product Info */}
+                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-[#141414] to-transparent">
+                  <h3 className="text-base font-semibold text-[#f5f5f5] mb-1 truncate">
+                    {product.name}
+                  </h3>
+                  <div className="flex items-center justify-between">
+                    <p className="text-sm text-[#d6a354] font-semibold">
+                      ${product.price}
+                    </p>
+                    {relative === 0 && (
+                      <motion.div
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                      >
+                        <Link
+                          to={`/product/${product._id}`}
+                          className="text-[#b3b3b3] hover:text-[#d6a354] transition"
+                        >
+                          <ArrowRight className="w-5 h-5" />
+                        </Link>
+                      </motion.div>
+                    )}
+                  </div>
+                </div>
+
+                {/* Hover overlay for center item */}
+                {relative === 0 && (
+                  <motion.div
+                    className="absolute inset-0 border-2 border-[#d6a354] rounded-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                  />
+                )}
+              </div>
+            </motion.div>
+          );
+        })}
+      </div>
+
+      {/* Dots */}
+      <div className="flex justify-center gap-2 mt-8">
+        {newArrivals.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => {
+              setDirection(index > activeIndex ? 1 : -1);
+              setActiveIndex(index);
+            }}
+            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+              index === activeIndex
+                ? "bg-[#d6a354] w-8"
+                : "bg-[#2a2a2a] hover:bg-[#d6a354]/50"
+            }`}
+          />
         ))}
       </div>
+
+      {/* View All Button */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3, duration: 0.8 }}
+        viewport={{ once: true }}
+        className="text-center mt-16 px-4"
+      >
+        <Link
+          to="/collections/all?sort=new"
+          className="group inline-flex items-center gap-2 bg-[#d6a354] text-[#0b0b0b] font-semibold text-sm px-8 py-3 rounded-sm transition-all duration-300"
+        >
+          View All Arrivals
+          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+        </Link>
+      </motion.div>
     </section>
   );
 };

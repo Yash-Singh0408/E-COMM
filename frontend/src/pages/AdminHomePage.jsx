@@ -6,57 +6,6 @@ import { fetchAllOrders } from '../redux/slices/adminOrderSlice';
 
 const AdminHomePage = () => {
 
-    // const orders = [
-    //     {
-    //         _id:12345,
-    //         user:{
-    //             name:"John Doe",
-    //         },
-    //         totalPrice:110,
-    //         status:"Processing"
-    //     },
-    //     {
-    //         _id:12346,
-    //         user:{
-    //             name:"Jane Doe",
-    //         },
-    //         totalPrice:100,
-    //         status:"Delivered"
-    //     },
-    //     {
-    //         _id:12347,
-    //         user:{
-    //             name:"John Doe",
-    //         },
-    //         totalPrice:110,
-    //         status:"Processing"
-    //     },
-    //     {
-    //         _id:12348,
-    //         user:{
-    //             name:"Jane Doe",
-    //         },
-    //         totalPrice:100,
-    //         status:"Delivered"
-    //     },
-    //     {
-    //         _id:12349,
-    //         user:{
-    //             name:"John Doe",
-    //         },
-    //         totalPrice:110,
-    //         status:"Processing"
-    //     },
-    //     {
-    //         _id:12350,
-    //         user:{
-    //             name:"Jane Doe",
-    //         },
-    //         totalPrice:100,
-    //         status:"Delivered"
-    //     },
-    // ];
-
     const dispatch = useDispatch();
     const {
         products,
@@ -124,7 +73,7 @@ const AdminHomePage = () => {
                         orders.map((order) => (
                             <tr key={orders._id} className='border-b hover:bg-gray-50 cursor-pointer'>
                              <td className='py-3 px-4'>{order._id}</td>
-                             <td className='py-3 px-4'>{order.user.name}</td>
+                             <td className='py-3 px-4'>{order.user?.name}</td>
                              <td className='py-3 px-4'>{order.totalPrice.toFixed(2)}</td>
                              <td className='py-3 px-4'>{order.status}</td>
                         </tr>
