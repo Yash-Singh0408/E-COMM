@@ -29,7 +29,6 @@ const HomePage = () => {
       })
     );
 
-    console.log(products);
     // fetch best seller
     const fetchBestSeller = async () => {
       try {
@@ -46,7 +45,6 @@ const HomePage = () => {
     fetchBestSeller();
   }, [dispatch]);
 
-  console.log(bestSellerProduct);
 
   return (
     <div>

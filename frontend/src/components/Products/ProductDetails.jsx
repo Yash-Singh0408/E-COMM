@@ -10,6 +10,7 @@ import {
 } from "../../redux/slices/productsSlice";
 import { addToCart } from "../../redux/slices/cartSlice";
 import ProductGrid from "./ProductGrid";
+import PremiumLoader from "../Common/PremiumLoader";
 
 const ProductDetails = ({ productId  , isBestSeller= false}) => {
   const params = useParams();
@@ -88,9 +89,7 @@ const ProductDetails = ({ productId  , isBestSeller= false}) => {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-color-bg">
-        <p className="text-color-text-secondary text-lg">Loading...</p>
-      </div>
+     <PremiumLoader />
     );
   }
 
@@ -178,7 +177,8 @@ const ProductDetails = ({ productId  , isBestSeller= false}) => {
                 </p>
               )}
               <h1 className="text-3xl sm:text-4xl font-bold text-color-text-primary mb-4">
-                {selectedProduct.name}
+              {/* cut the last character from products name */}
+                {selectedProduct.name.slice(0, -2)}
               </h1>
 
 

@@ -147,513 +147,352 @@ const products = [
   },
   {
     "name": "CoreStreet Chrono Watch 4",
-    "description": "CoreStreet Chrono Watch crafted in Leather \u2014 designed for comfort and everyday style. Part of our Denim Collection.",
+    "description": "CoreStreet Chrono Watch crafted in Leather — designed for comfort and everyday style. Part of our Denim Collection.",
     "price": 207.76,
     "discountPrice": 163.92,
     "countInStock": 21,
     "sku": "CO0004",
     "category": "Accessories",
     "brand": "CoreStreet",
-    "sizes": [
-      "XXL",
-      "M",
-      "XS"
-    ],
-    "colors": [
-      "Green",
-      "Pink",
-      "Navy"
-    ],
+    "sizes": ["XXL","M","XS"],
+    "colors": ["Green","Pink","Navy"],
     "collections": "Denim Collection",
     "material": "Leather",
     "gender": "Men",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1433078133838-7d88d6b71a9a?auto=format&fit=crop&w=2400&q=80",
-        "altText": "CoreStreet Chrono Watch 4 front view"
+        "url": "https://media.istockphoto.com/id/1180244659/photo/luxury-watch-isolated-on-white-background-with-clipping-path-for-artwork-or-design-black.jpg?s=612x612&w=0&k=20&c=yeFNfkQmcVV9BTUlZO8vY_oLOQgDAt23LfCbF1e3fbI=",
+        "altText": "Chronograph watch – similar to CoreStreet Chrono"
       },
       {
-        "url": "https://images.unsplash.com/photo-1521336218319-3a5c3b4b8a1a?auto=format&fit=crop&w=2400&q=80",
-        "altText": "CoreStreet Chrono Watch 4 lifestyle view"
+        "url": "https://5.imimg.com/data5/SELLER/Default/2025/8/535856070/NE/KA/GM/79832878/img-20250811-wa0340-1000x1000.jpg",
+        "altText": "Side view of chronograph watch"
       }
     ],
     "isFeatured": true,
     "isPublished": true,
     "rating": 4.9,
     "numReviews": 290,
-    "tags": [
-      "Accessories",
-      "CoreStreet",
-      "Denim Collection"
-    ],
+    "tags": ["Accessories","CoreStreet","Denim Collection"],
     "metaTitle": "CoreStreet Chrono Watch 4 | Denim Collection",
-    "metaDescription": "Buy CoreStreet Chrono Watch 4 \u2014 Leather accessories perfect for men \u2014 shop denim collection now.",
+    "metaDescription": "Buy CoreStreet Chrono Watch 4 — Leather accessories perfect for men — shop denim collection now.",
     "metaKeywords": "CoreStreet,Chrono Watch,Denim Collection,Men",
-    "dimensions": {
-      "length": 111,
-      "width": 50,
-      "height": 7
-    },
+    "dimensions": { "length": 111, "width": 50, "height": 7 },
     "weight": 1.69
   },
   {
     "name": "Modeify Trench Coat 5",
-    "description": "Modeify Trench Coat crafted in Polyester \u2014 designed for comfort and everyday style. Part of our Denim Collection.",
+    "description": "Modeify Trench Coat crafted in Polyester — designed for comfort and everyday style. Part of our Denim Collection.",
     "price": 98.78,
     "discountPrice": 74.14,
     "countInStock": 131,
     "sku": "MO0005",
     "category": "Outerwear",
     "brand": "Modeify",
-    "sizes": [
-      "XXL",
-      "XL",
-      "L",
-      "M"
-    ],
-    "colors": [
-      "Green",
-      "Blue",
-      "Red"
-    ],
+    "sizes": ["XXL","XL","L","M"],
+    "colors": ["Green","Blue","Red"],
     "collections": "Denim Collection",
     "material": "Polyester",
     "gender": "Unisex",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1514996937319-344454492b37?auto=format&fit=crop&w=2400&q=80",
-        "altText": "Modeify Trench Coat 5 front view"
+        "url": "https://dtcralphlauren.scene7.com/is/image/PoloGSI/s7-1450355_alternate10?$rl_4x5_pdp$",
+        "altText": "Polyester trench coat front"
       },
       {
-        "url": "https://images.unsplash.com/photo-1342464360855-9a8b7c6d5e4f?auto=format&fit=crop&w=2400&q=80",
-        "altText": "Modeify Trench Coat 5 lifestyle view"
+        "url": "https://m.media-amazon.com/images/I/61KwoHdCKQL._AC_UY1100_.jpg",
+        "altText": "Trench coat on model"
       }
     ],
     "isFeatured": true,
     "isPublished": true,
     "rating": 4.6,
     "numReviews": 440,
-    "tags": [
-      "Outerwear",
-      "Modeify",
-      "Denim Collection"
-    ],
+    "tags": ["Outerwear","Modeify","Denim Collection"],
     "metaTitle": "Modeify Trench Coat 5 | Denim Collection",
-    "metaDescription": "Buy Modeify Trench Coat 5 \u2014 Polyester outerwear perfect for unisex \u2014 shop denim collection now.",
+    "metaDescription": "Buy Modeify Trench Coat 5 — Polyester outerwear perfect for unisex — shop denim collection now.",
     "metaKeywords": "Modeify,Trench Coat,Denim Collection,Unisex",
-    "dimensions": {
-      "length": 34,
-      "width": 29,
-      "height": 6
-    },
+    "dimensions": { "length": 34, "width": 29, "height": 6 },
     "weight": 2.01
   },
   {
     "name": "Modeify Sandals 6",
-    "description": "Modeify Sandals crafted in Viscose \u2014 designed for comfort and everyday style. Part of our Vacation Wear.",
+    "description": "Modeify Sandals crafted in Viscose — designed for comfort and everyday style. Part of our Vacation Wear.",
     "price": 190.95,
     "discountPrice": 152.05,
     "countInStock": 80,
     "sku": "MO0006",
     "category": "Footwear",
     "brand": "Modeify",
-    "sizes": [
-      "XXL",
-      "XS"
-    ],
-    "colors": [
-      "Navy",
-      "Green",
-      "Mustard"
-    ],
+    "sizes": ["XXL","XS"],
+    "colors": ["Navy","Green","Mustard"],
     "collections": "Vacation Wear",
     "material": "Viscose",
     "gender": "Women",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1503220317375-9bc0f6f4f8c6?auto=format&fit=crop&w=2400&q=80",
-        "altText": "Modeify Sandals 6 front view"
+        "url": "https://relaxofootwear.com/cdn/shop/files/SS0673G-TNBK-2.jpg?v=1748280778&width=800",
+        "altText": "Women’s stylish sandals front"
       },
       {
-        "url": "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=2400&q=80",
-        "altText": "Modeify Sandals 6 lifestyle view"
+        "url": "https://relaxofootwear.com/cdn/shop/files/SS0673G-TNBK-3.jpg?v=1748280789&width=800",
+        "altText": "Lifestyle shot of sandals"
       }
     ],
     "isFeatured": false,
     "isPublished": true,
     "rating": 3.7,
     "numReviews": 1,
-    "tags": [
-      "Footwear",
-      "Modeify",
-      "Vacation Wear"
-    ],
+    "tags": ["Footwear","Modeify","Vacation Wear"],
     "metaTitle": "Modeify Sandals 6 | Vacation Wear",
-    "metaDescription": "Buy Modeify Sandals 6 \u2014 Viscose footwear perfect for women \u2014 shop vacation wear now.",
+    "metaDescription": "Buy Modeify Sandals 6 — Viscose footwear perfect for women — shop vacation wear now.",
     "metaKeywords": "Modeify,Sandals,Vacation Wear,Women",
-    "dimensions": {
-      "length": 112,
-      "width": 43,
-      "height": 17
-    },
+    "dimensions": { "length": 112, "width": 43, "height": 17 },
     "weight": 1.94
   },
   {
-    "name": "CoreStreet Sports Bra 7",
-    "description": "CoreStreet Sports Bra crafted in Linen \u2014 designed for comfort and everyday style. Part of our Activewear.",
+    "name": "CoreStreet Sports Wear 7",
+    "description": "CoreStreet Sports wear crafted in Linen — designed for comfort and everyday style. Part of our Activewear.",
     "price": 17.61,
     "discountPrice": 13.46,
     "countInStock": 19,
     "sku": "CO0007",
     "category": "Athleisure",
     "brand": "CoreStreet",
-    "sizes": [
-      "XL",
-      "M"
-    ],
-    "colors": [
-      "Blue",
-      "Grey",
-      "Mustard"
-    ],
+    "sizes": ["XL","M"],
+    "colors": ["Blue","Grey","Mustard"],
     "collections": "Activewear",
     "material": "Linen",
     "gender": "Unisex",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1495128206892-2f1b6d6d5f3b?auto=format&fit=crop&w=2400&q=80",
-        "altText": "CoreStreet Sports Bra 7 front view"
+        "url": "https://tiimg.tistatic.com/fp/1/008/234/shrink-resistance-mens-sports-wear-blue-and-white-plain-tracksuits-089.jpg",
+        "altText": "Active sports wear on model"
       },
       {
-        "url": "https://images.unsplash.com/photo-1528701800485-5d1cdbbda37c?auto=format&fit=crop&w=2400&q=80",
-        "altText": "CoreStreet Sports Bra 7 lifestyle view"
+        "url": "https://servis.pk/cdn/shop/files/PCM201007002.jpg?v=1760957121&width=493",
+        "altText": "Close-up of sports wear fabric"
       }
     ],
     "isFeatured": true,
     "isPublished": true,
     "rating": 4.8,
     "numReviews": 484,
-    "tags": [
-      "Athleisure",
-      "CoreStreet",
-      "Activewear"
-    ],
+    "tags": ["Athleisure","CoreStreet","Activewear"],
     "metaTitle": "CoreStreet Sports Bra 7 | Activewear",
-    "metaDescription": "Buy CoreStreet Sports Bra 7 \u2014 Linen athleisure perfect for unisex \u2014 shop activewear now.",
+    "metaDescription": "Buy CoreStreet Sports Bra 7 — Linen athleisure perfect for unisex — shop activewear now.",
     "metaKeywords": "CoreStreet,Sports Bra,Activewear,Unisex",
-    "dimensions": {
-      "length": 30,
-      "width": 20,
-      "height": 16
-    },
+    "dimensions": { "length": 30, "width": 20, "height": 16 },
     "weight": 2.07
   },
   {
     "name": "CoreStreet Trench Coat 8",
-    "description": "CoreStreet Trench Coat crafted in Polyester \u2014 designed for comfort and everyday style. Part of our Denim Collection.",
+    "description": "CoreStreet Trench Coat crafted in Polyester — designed for comfort and everyday style. Part of our Denim Collection.",
     "price": 248.84,
     "discountPrice": 204.05,
     "countInStock": 120,
     "sku": "CO0008",
     "category": "Outerwear",
     "brand": "CoreStreet",
-    "sizes": [
-      "S",
-      "XL",
-      "XXL",
-      "M",
-      "L"
-    ],
-    "colors": [
-      "Green",
-      "Navy",
-      "Olive"
-    ],
+    "sizes": ["S","XL","XXL","M","L"],
+    "colors": ["Green","Navy","Olive"],
     "collections": "Denim Collection",
     "material": "Polyester",
     "gender": "Men",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1401342196704-1b8b2b5b3d6c?auto=format&fit=crop&w=2400&q=80",
-        "altText": "CoreStreet Trench Coat 8 front view"
+        "url": "https://i.pinimg.com/736x/90/57/b9/9057b9c29df71f1e1a6bf3cbf0e4ab0c.jpg",
+        "altText": "Polyester trench coat classic"
       },
       {
-        "url": "https://images.unsplash.com/photo-1330316456455-1a2b3c4d5e6f?auto=format&fit=crop&w=2400&q=80",
-        "altText": "CoreStreet Trench Coat 8 lifestyle view"
+        "url": "https://i5.walmartimages.com/seo/Outfmvch-Trench-Coat-Women-wool-Coats-jackets-Women-trench-Coat-Long-Double-Breasted-Jacket-Classic-Elegant-Windproof-Overcoat-Belt-Fall-Winter-Outwe_c58e2f39-7273-471e-833b-290bbf4957c3.ad5b9bf13a2bb8c34f528c19d4e0b250.jpeg?odnHeight=573&odnWidth=573&odnBg=FFFFFF",
+        "altText": "Model wearing trench coat"
       }
     ],
     "isFeatured": true,
     "isPublished": true,
     "rating": 3.9,
     "numReviews": 32,
-    "tags": [
-      "Outerwear",
-      "CoreStreet",
-      "Denim Collection"
-    ],
+    "tags": ["Outerwear","CoreStreet","Denim Collection"],
     "metaTitle": "CoreStreet Trench Coat 8 | Denim Collection",
-    "metaDescription": "Buy CoreStreet Trench Coat 8 \u2014 Polyester outerwear perfect for men \u2014 shop denim collection now.",
+    "metaDescription": "Buy CoreStreet Trench Coat 8 — Polyester outerwear perfect for men — shop denim collection now.",
     "metaKeywords": "CoreStreet,Trench Coat,Denim Collection,Men",
-    "dimensions": {
-      "length": 63,
-      "width": 12,
-      "height": 19
-    },
+    "dimensions": { "length": 63, "width": 12, "height": 19 },
     "weight": 1.45
   },
   {
     "name": "BoldNove Hoodie 9",
-    "description": "BoldNove Hoodie crafted in Linen \u2014 designed for comfort and everyday style. Part of our Urban Essentials.",
+    "description": "BoldNove Hoodie crafted in Linen — designed for comfort and everyday style. Part of our Urban Essentials.",
     "price": 171.54,
     "discountPrice": 155.61,
     "countInStock": 152,
     "sku": "BO0009",
     "category": "Top Wear",
     "brand": "BoldNove",
-    "sizes": [
-      "XL",
-      "S"
-    ],
-    "colors": [
-      "White",
-      "Black",
-      "Grey"
-    ],
+    "sizes": ["XL","S"],
+    "colors": ["White","Black","Grey"],
     "collections": "Urban Essentials",
     "material": "Linen",
     "gender": "Men",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1514996937319-344454492b37?auto=format&fit=crop&w=2400&q=80",
-        "altText": "BoldNove Hoodie 9 front view"
+        "url": "https://www.beyours.in/cdn/shop/files/rust-orange-hoodie-2.jpg?v=1695619934&width=800",
+        "altText": "Linen hoodie flat lay"
       },
       {
-        "url": "https://images.unsplash.com/photo-1201514979628-0b1c2d3e4f5a?auto=format&fit=crop&w=2400&q=80",
-        "altText": "BoldNove Hoodie 9 lifestyle view"
+        "url": "https://www.beyours.in/cdn/shop/files/rust-orange-hoodie-1.jpg?v=1695635847&width=800",
+        "altText": "Casual hoodie worn by man"
       }
     ],
     "isFeatured": false,
     "isPublished": true,
     "rating": 3.9,
     "numReviews": 242,
-    "tags": [
-      "Top Wear",
-      "BoldNove",
-      "Urban Essentials"
-    ],
+    "tags": ["Top Wear","BoldNove","Urban Essentials"],
     "metaTitle": "BoldNove Hoodie 9 | Urban Essentials",
-    "metaDescription": "Buy BoldNove Hoodie 9 \u2014 Linen top wear perfect for men \u2014 shop urban essentials now.",
+    "metaDescription": "Buy BoldNove Hoodie 9 — Linen top wear perfect for men — shop urban essentials now.",
     "metaKeywords": "BoldNove,Hoodie,Urban Essentials,Men",
-    "dimensions": {
-      "length": 72,
-      "width": 34,
-      "height": 4
-    },
+    "dimensions": { "length": 72, "width": 34, "height": 4 },
     "weight": 0.38
   },
   {
     "name": "Modeify Slim Fit Jeans 10",
-    "description": "Modeify Slim Fit Jeans crafted in Cotton \u2014 designed for comfort and everyday style. Part of our Denim Collection.",
+    "description": "Modeify Slim Fit Jeans crafted in Cotton — designed for comfort and everyday style. Part of our Denim Collection.",
     "price": 71.92,
     "discountPrice": 65.59,
     "countInStock": 113,
     "sku": "MO0010",
     "category": "Bottom Wear",
     "brand": "Modeify",
-    "sizes": [
-      "L",
-      "M"
-    ],
-    "colors": [
-      "Pink",
-      "Mustard",
-      "White"
-    ],
+    "sizes": ["L","M"],
+    "colors": ["Pink","Mustard","White"],
     "collections": "Denim Collection",
     "material": "Cotton",
     "gender": "Women",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1401342196704-1b8b2b5b3d6c?auto=format&fit=crop&w=2400&q=80",
-        "altText": "Modeify Slim Fit Jeans 10 front view"
+        "url": "https://www.jackjones.in/cdn/shop/files/219230901_g0.jpg?v=1758621517&width=1000",
+        "altText": "Denim jeans folded"
       },
       {
-        "url": "https://images.unsplash.com/photo-1514996937319-344454492b37?auto=format&fit=crop&w=2400&q=80",
-        "altText": "Modeify Slim Fit Jeans 10 lifestyle view"
+        "url": "https://www.jackjones.in/cdn/shop/files/219230901_g5.jpg?v=1756123414&width=1000",
+        "altText": "Person wearing slim fit jeans"
       }
     ],
     "isFeatured": true,
     "isPublished": true,
     "rating": 3.9,
     "numReviews": 127,
-    "tags": [
-      "Bottom Wear",
-      "Modeify",
-      "Denim Collection"
-    ],
+    "tags": ["Bottom Wear","Modeify","Denim Collection"],
     "metaTitle": "Modeify Slim Fit Jeans 10 | Denim Collection",
-    "metaDescription": "Buy Modeify Slim Fit Jeans 10 \u2014 Cotton bottom wear perfect for women \u2014 shop denim collection now.",
+    "metaDescription": "Buy Modeify Slim Fit Jeans 10 — Cotton bottom wear perfect for women — shop denim collection now.",
     "metaKeywords": "Modeify,Slim Fit Jeans,Denim Collection,Women",
-    "dimensions": {
-      "length": 29,
-      "width": 66,
-      "height": 18
-    },
+    "dimensions": { "length": 29, "width": 66, "height": 18 },
     "weight": 0.38
   },
   {
     "name": "CoreStreet Trench Coat 11",
-    "description": "CoreStreet Trench Coat crafted in Polyester \u2014 designed for comfort and everyday style. Part of our Casual Street.",
+    "description": "CoreStreet Trench Coat crafted in Polyester — designed for comfort and everyday style. Part of our Casual Street.",
     "price": 13.5,
     "discountPrice": 11.77,
     "countInStock": 113,
     "sku": "CO0011",
     "category": "Outerwear",
     "brand": "CoreStreet",
-    "sizes": [
-      "L",
-      "XS",
-      "S"
-    ],
-    "colors": [
-      "Beige",
-      "Brown",
-      "Pink"
-    ],
+    "sizes": ["L","XS","S"],
+    "colors": ["Beige","Brown","Pink"],
     "collections": "Casual Street",
     "material": "Polyester",
     "gender": "Men",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1382737866405-7f7b9c8a6b5c?auto=format&fit=crop&w=2400&q=80",
-        "altText": "CoreStreet Trench Coat 11 front view"
+        "url": "https://www.wisconline.co.uk/images/min/MT02-min.jpg",
+        "altText": "Beige trench coat hanging"
       },
       {
-        "url": "https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=2400&q=80",
-        "altText": "CoreStreet Trench Coat 11 lifestyle view"
+        "url": "https://d1fufvy4xao6k9.cloudfront.net/images/landings/39/trench_coats_mob_2%20(1)_1.jpg",
+        "altText": "Model in brown trench coat"
       }
     ],
     "isFeatured": false,
     "isPublished": true,
     "rating": 4.9,
     "numReviews": 401,
-    "tags": [
-      "Outerwear",
-      "CoreStreet",
-      "Casual Street"
-    ],
+    "tags": ["Outerwear","CoreStreet","Casual Street"],
     "metaTitle": "CoreStreet Trench Coat 11 | Casual Street",
-    "metaDescription": "Buy CoreStreet Trench Coat 11 \u2014 Polyester outerwear perfect for men \u2014 shop casual street now.",
+    "metaDescription": "Buy CoreStreet Trench Coat 11 — Polyester outerwear perfect for men — shop casual street now.",
     "metaKeywords": "CoreStreet,Trench Coat,Casual Street,Men",
-    "dimensions": {
-      "length": 91,
-      "width": 72,
-      "height": 5
-    },
+    "dimensions": { "length": 91, "width": 72, "height": 5 },
     "weight": 0.6
   },
   {
     "name": "Trendora Performance Leggings 12",
-    "description": "Trendora Performance Leggings crafted in Nylon \u2014 designed for comfort and everyday style. Part of our Urban Essentials.",
+    "description": "Trendora Performance Leggings crafted in Nylon — designed for comfort and everyday style. Part of our Urban Essentials.",
     "price": 29.23,
     "discountPrice": 27.37,
     "countInStock": 35,
     "sku": "TR0012",
     "category": "Athleisure",
     "brand": "Trendora",
-    "sizes": [
-      "XL",
-      "XXL",
-      "S",
-      "XS",
-      "M"
-    ],
-    "colors": [
-      "Black",
-      "Mustard",
-      "Olive"
-    ],
+    "sizes": ["XL","XXL","S","XS","M"],
+    "colors": ["Black","Mustard","Olive"],
     "collections": "Urban Essentials",
     "material": "Nylon",
     "gender": "Unisex",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1528701800485-5d1cdbbda37c?auto=format&fit=crop&w=2400&q=80",
-        "altText": "Trendora Performance Leggings 12 front view"
+        "url": "https://cdn.pixelbin.io/v2/falling-surf-7c8bb8/fyprod/t.resize(w:700,dpr:1)/products/pictures/item/free/original/superdry/GS3001ER02A/0/qpIE5LjWzl-671010_02.jpg",
+        "altText": "Black performance leggings"
       },
       {
-        "url": "https://images.unsplash.com/photo-1433078133838-7d88d6b71a9a?auto=format&fit=crop&w=2400&q=80",
-        "altText": "Trendora Performance Leggings 12 lifestyle view"
+        "url": "https://cdn.pixelbin.io/v2/falling-surf-7c8bb8/fyprod/t.resize(w:700,dpr:1)/products/pictures/item/free/original/superdry/GS3001ER02A/1/GyneYfqkYU-671010_03.jpg",
+        "altText": "Person wearing leggings"
       }
     ],
     "isFeatured": false,
     "isPublished": true,
     "rating": 3.9,
     "numReviews": 304,
-    "tags": [
-      "Athleisure",
-      "Trendora",
-      "Urban Essentials"
-    ],
+    "tags": ["Athleisure","Trendora","Urban Essentials"],
     "metaTitle": "Trendora Performance Leggings 12 | Urban Essentials",
-    "metaDescription": "Buy Trendora Performance Leggings 12 \u2014 Nylon athleisure perfect for unisex \u2014 shop urban essentials now.",
+    "metaDescription": "Buy Trendora Performance Leggings 12 — Nylon athleisure perfect for unisex — shop urban essentials now.",
     "metaKeywords": "Trendora,Performance Leggings,Urban Essentials,Unisex",
-    "dimensions": {
-      "length": 25,
-      "width": 20,
-      "height": 14
-    },
+    "dimensions": { "length": 25, "width": 20, "height": 14 },
     "weight": 1.69
   },
   {
     "name": "BoldNove Joggers 13",
-    "description": "BoldNove Joggers crafted in Nylon \u2014 designed for comfort and everyday style. Part of our Casual Street.",
+    "description": "BoldNove Joggers crafted in Nylon — designed for comfort and everyday style. Part of our Casual Street.",
     "price": 233.17,
     "discountPrice": 177.87,
     "countInStock": 164,
     "sku": "BO0013",
     "category": "Bottom Wear",
     "brand": "BoldNove",
-    "sizes": [
-      "XXL",
-      "M",
-      "L"
-    ],
-    "colors": [
-      "Red",
-      "Green",
-      "Beige"
-    ],
+    "sizes": ["XXL","M","L"],
+    "colors": ["Red","Green","Beige"],
     "collections": "Casual Street",
     "material": "Nylon",
     "gender": "Women",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=2400&q=80",
-        "altText": "BoldNove Joggers 13 front view"
+        "url": "https://assets-jiocdn.ajio.com/medias/sys_master/root/20240716/a9uS/6696b04a6f60443f31522c1b/-473Wx593H-467290457-grey-MODEL.jpg",
+        "altText": "Casual nylon joggers front"
       },
       {
-        "url": "https://images.unsplash.com/photo-1382737866405-7f7b9c8a6b5c?auto=format&fit=crop&w=2400&q=80",
-        "altText": "BoldNove Joggers 13 lifestyle view"
+        "url": "https://assets-jiocdn.ajio.com/medias/sys_master/root/20240716/FJD2/6696b0506f60443f31522c2f/-473Wx593H-467290457-grey-MODEL3.jpg",
+        "altText": "Person wearing joggers"
       }
     ],
     "isFeatured": false,
     "isPublished": true,
     "rating": 5.0,
     "numReviews": 37,
-    "tags": [
-      "Bottom Wear",
-      "BoldNove",
-      "Casual Street"
-    ],
+    "tags": ["Bottom Wear","BoldNove","Casual Street"],
     "metaTitle": "BoldNove Joggers 13 | Casual Street",
-    "metaDescription": "Buy BoldNove Joggers 13 \u2014 Nylon bottom wear perfect for women \u2014 shop casual street now.",
+    "metaDescription": "Buy BoldNove Joggers 13 — Nylon bottom wear perfect for women — shop casual street now.",
     "metaKeywords": "BoldNove,Joggers,Casual Street,Women",
-    "dimensions": {
-      "length": 88,
-      "width": 37,
-      "height": 17
-    },
+    "dimensions": { "length": 88, "width": 37, "height": 17 },
     "weight": 0.77
   },
   {
@@ -681,11 +520,11 @@ const products = [
     "gender": "Men",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1514996937319-344454492b37?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://m.media-amazon.com/images/I/61HknRN0TcL._SX679_.jpg",
         "altText": "EchoLane Bomber Jacket 14 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://m.media-amazon.com/images/I/81rCYtYRLQL._SX569_.jpg",
         "altText": "EchoLane Bomber Jacket 14 lifestyle view"
       }
     ],
@@ -734,11 +573,11 @@ const products = [
     "gender": "Unisex",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1401342196704-1b8b2b5b3d6c?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.selectedhomme.in/cdn/shop/files/141435101_g1.jpg?v=1745506806&width=700",
         "altText": "EchoLane Knit Sweater 15 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1280543193106-123456abcdef?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.selectedhomme.in/cdn/shop/files/141435101_g2.jpg?v=1745506805&width=700",
         "altText": "EchoLane Knit Sweater 15 lifestyle view"
       }
     ],
@@ -762,8 +601,8 @@ const products = [
     "weight": 0.23
   },
   {
-    "name": "EchoLane Leather Boots 16",
-    "description": "EchoLane Leather Boots crafted in Polyester \u2014 designed for comfort and everyday style. Part of our Vacation Wear.",
+    "name": "TeakWood Leather Boots 16",
+    "description": "TeakWood Leather Boots crafted in Polyester \u2014 designed for comfort and everyday style. Part of our Vacation Wear.",
     "price": 171.05,
     "discountPrice": 150.4,
     "countInStock": 163,
@@ -784,11 +623,11 @@ const products = [
     "gender": "Men",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1280543193106-123456abcdef?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://teakwoodleathers.com/cdn/shop/products/T_SH_JK_BT14_BL_1_df1d1c6c-8bc8-4b8e-b43d-962908957819_1024x1024@2x.jpg?v=1750933882",
         "altText": "EchoLane Leather Boots 16 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1422466541269-9bd3f0a6f7a2?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://teakwoodleathers.com/cdn/shop/products/T_SH_JK_BT14_BL_5_58bfaee6-e746-4884-9c73-1ede5994c53b_1024x1024@2x.jpg?v=1750933882",
         "altText": "EchoLane Leather Boots 16 lifestyle view"
       }
     ],
@@ -837,11 +676,11 @@ const products = [
     "gender": "Women",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1528701800489-20be9c62a3ca?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://img4.dhresource.com/webp/m/0x0/f3/albu/jc/g/24/3138b43d-6501-4f4f-b292-a5c01ae6f3c0.jpg",
         "altText": "UrbanThread Hoodie 17 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1528701800489-20be9c62a3ca?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://img4.dhresource.com/webp/m/0x0/f3/albu/jc/g/24/3e4bbb63-abea-4622-9e31-78b139b65d6a.jpg",
         "altText": "UrbanThread Hoodie 17 lifestyle view"
       }
     ],
@@ -889,11 +728,11 @@ const products = [
     "gender": "Unisex",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1342464360855-9a8b7c6d5e4f?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://loomandspin.co.in/cdn/shop/files/3_231b9199-e0b8-4b94-9092-e1a6dbb9869a.jpg?v=1747290019&width=800",
         "altText": "CoreStreet Shorts 18 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://loomandspin.co.in/cdn/shop/files/1_aefbf023-d745-4e73-9b0d-737e9b556346.jpg?v=1747290019&width=800",
         "altText": "CoreStreet Shorts 18 lifestyle view"
       }
     ],
@@ -941,11 +780,11 @@ const products = [
     "gender": "Unisex",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://4.imimg.com/data4/DC/JE/MY-799611/canvas-backpack-1-1000x1000.jpg",
         "altText": "CoreStreet Canvas Backpack 19 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1280543193106-123456abcdef?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://cdn.shopify.com/s/files/1/0183/7917/products/canvas-rucksack-backpack-for-school-outdoor-front_1024x1024.jpg",
         "altText": "CoreStreet Canvas Backpack 19 lifestyle view"
       }
     ],
@@ -993,11 +832,11 @@ const products = [
     "gender": "Men",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.untuckit.com/cdn/shop/files/016_ST-CLAIR-UNTUCKIT-41850Tan-PANTS-SOLID-KHAKI_2042-Recovered.jpg?height=1000&v=1762268850",
         "altText": "Modeify Chino Pants 20 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1521335629791-ce4aec67dd47?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.untuckit.com/cdn/shop/files/ST-CLAIR-UNTUCKIT-41850Tan-PANTS-SOLID-KHAKI-4.jpg?height=1000&v=1759431661",
         "altText": "Modeify Chino Pants 20 lifestyle view"
       }
     ],
@@ -1043,11 +882,11 @@ const products = [
     "gender": "Men",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1351502704218-8b7a6c5d4e3f?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.jackjones.in/cdn/shop/files/901832101_g0_e30909d0-0be3-4001-9489-e3f0812ccd79.jpg?v=1758709220&width=1000",
         "altText": "Trendora Bomber Jacket 21 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1433078133838-7d88d6b71a9a?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.jackjones.in/cdn/shop/files/901832101_g4_8999d9d3-c65d-4c2c-84f3-1d18e4b797a5.jpg?v=1758709220&width=1000",
         "altText": "Trendora Bomber Jacket 21 lifestyle view"
       }
     ],
@@ -1095,11 +934,11 @@ const products = [
     "gender": "Unisex",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1363995888170-0f8a7b6c5d4e?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://colortheory.in/cdn/shop/products/True-Color1055_1000x_crop_center.jpg?v=1627452524",
         "altText": "CoreStreet Pleated Skirt 22 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1401342196704-1b8b2b5b3d6c?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://colortheory.in/cdn/shop/products/True-Color1059_1000x_crop_center.jpg?v=1627452530",
         "altText": "CoreStreet Pleated Skirt 22 lifestyle view"
       }
     ],
@@ -1145,11 +984,11 @@ const products = [
     "gender": "Unisex",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1520974721921-365af89669b2?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.selectedhomme.in/cdn/shop/files/205618005_g1.jpg?v=1745551836&width=700",
         "altText": "VelvetPeak Chino Pants 23 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1585386959984-a41552231693?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.selectedhomme.in/cdn/shop/files/205618005_g3.jpg?v=1745551837&width=700",
         "altText": "VelvetPeak Chino Pants 23 lifestyle view"
       }
     ],
@@ -1197,11 +1036,11 @@ const products = [
     "gender": "Unisex",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://i.ebayimg.com/images/g/N5wAAOSwVztf9PGT/s-l1600.webp",
         "altText": "Modeify Performance Leggings 24 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1503220317375-9bc0f6f4f8c6?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://i.ebayimg.com/images/g/P3gAAOSwMXdf9PF2/s-l1600.webp",
         "altText": "Modeify Performance Leggings 24 lifestyle view"
       }
     ],
@@ -1250,11 +1089,11 @@ const products = [
     "gender": "Women",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.bombayshirts.com/cdn/shop/files/316936dc-9c8f-a5f0-a905-373e339b5023_Bay_20Vintage_20Washed_20Oxford__20copy.jpg?v=1758473120",
         "altText": "CoreStreet Oxford Shirt 25 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1521336218319-3a5c3b4b8a1a?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.bombayshirts.com/cdn/shop/files/b78787eb-b888-646f-f821-2da8298d9e4b_Bay_20Vintage_20Washed_20Oxford__20copy_202.jpg?v=1758473121",
         "altText": "CoreStreet Oxford Shirt 25 lifestyle view"
       }
     ],
@@ -1301,11 +1140,11 @@ const products = [
     "gender": "Men",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1382737866405-7f7b9c8a6b5c?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://media.landmarkshops.in/cdn-cgi/image/h=831,w=615,q=85,fit=cover/max-new/1000014219430-Green-LIGHTGREEN-1000014219430_01-2100.jpg",
         "altText": "EchoLane Knit Sweater 26 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://media.landmarkshops.in/cdn-cgi/image/h=831,w=615,q=85,fit=cover/max-new/1000014219430-Green-LIGHTGREEN-1000014219430_02-2100.jpg",
         "altText": "EchoLane Knit Sweater 26 lifestyle view"
       }
     ],
@@ -1352,11 +1191,11 @@ const products = [
     "gender": "Women",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1416339218136-9f3cf3b2f6a8?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://nostrain.in/cdn/shop/files/PCS-06_1.webp?v=1749729063&width=1000",
         "altText": "NovaWear Sandals 27 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1474631245212-32dc3c8310f3?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://nostrain.in/cdn/shop/files/1_5aeea525-64a8-48b0-a092-e39e516af70b.webp?v=1749729063&width=1000",
         "altText": "NovaWear Sandals 27 lifestyle view"
       }
     ],
@@ -1405,11 +1244,11 @@ const products = [
     "gender": "Women",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1382737866405-7f7b9c8a6b5c?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto/17b9d8ac-5f88-4347-8f92-22271868df1f/W+NIKE+VOMERO+18.png",
         "altText": "EchoLane Running Sneakers 28 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1201514979628-0b1c2d3e4f5a?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto/a30018b2-6e87-4661-b9e2-50ac2b31e79d/W+NIKE+VOMERO+18.png",
         "altText": "EchoLane Running Sneakers 28 lifestyle view"
       }
     ],
@@ -1456,11 +1295,11 @@ const products = [
     "gender": "Women",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1363995888170-0f8a7b6c5d4e?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://i0.wp.com/thefashionhousemom.com/wp-content/uploads/2024/02/Woman-showing-an-elegant-trench-coat-outfit-at-a-cafe.jpg?resize=768%2C1152&ssl=1",
         "altText": "EchoLane Trench Coat 29 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1351502704218-8b7a6c5d4e3f?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://i0.wp.com/thefashionhousemom.com/wp-content/uploads/2024/02/Woman-wearing-casual-trench-coat-outfit.jpg?resize=768%2C1152&ssl=1",
         "altText": "EchoLane Trench Coat 29 lifestyle view"
       }
     ],
@@ -1508,11 +1347,11 @@ const products = [
     "gender": "Unisex",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1503341452709-9c6b7b3d2c6f?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://muffynn.com/cdn/shop/files/ActiveWear_NX_SmartJogger_OliveGreen_01.webp?v=1736530162&width=800",
         "altText": "EchoLane Joggers 30 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://muffynn.com/cdn/shop/files/ActiveWear_NX_SmartJogger_OliveGreen_06.webp?v=1736530037&width=800",
         "altText": "EchoLane Joggers 30 lifestyle view"
       }
     ],
@@ -1560,11 +1399,11 @@ const products = [
     "gender": "Unisex",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1602810318383-e377c9cc6cb3?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://media.viskanassets.com/v2/pellepprod/normal/C1-Sunglasses-solglas%C3%B6gon-PP93C1-6010-1.jpg",
         "altText": "VelvetPeak Sunglasses 31 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1280543193106-123456abcdef?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://media.viskanassets.com/v2/pellepprod/normal/C1-Sunglasses-solglas%C3%B6gon-PP93C1-6010-D.jpg",
         "altText": "VelvetPeak Sunglasses 31 lifestyle view"
       }
     ],
@@ -1613,11 +1452,11 @@ const products = [
     "gender": "Women",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://redflame.in/cdn/shop/products/RFSH-39973-A_1.jpg?v=1684482191&width=900",
         "altText": "BoldNove Resort Shirt 32 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1201514979628-0b1c2d3e4f5a?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://redflame.in/cdn/shop/products/RFSH-39973-A_5.jpg?v=1684482191&width=900",
         "altText": "BoldNove Resort Shirt 32 lifestyle view"
       }
     ],
@@ -1666,11 +1505,11 @@ const products = [
     "gender": "Unisex",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1521335629791-ce4aec67dd47?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://johnwatson.in/cdn/shop/products/1N8A5358.jpg?v=1664005901&width=800",
         "altText": "BoldNove Oxford Shirt 33 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://johnwatson.in/cdn/shop/products/1N8A5376-2.jpg?v=1664005913&width=800",
         "altText": "BoldNove Oxford Shirt 33 lifestyle view"
       }
     ],
@@ -1694,8 +1533,8 @@ const products = [
     "weight": 1.77
   },
   {
-    "name": "Luxora Blouse 34",
-    "description": "Luxora Blouse crafted in Wool \u2014 designed for comfort and everyday style. Part of our Activewear.",
+    "name": "Luxora jacket  34",
+    "description": "Luxora jacket crafted in Wool \u2014 designed for comfort and everyday style. Part of our Activewear.",
     "price": 40.19,
     "discountPrice": 36.37,
     "countInStock": 41,
@@ -1714,14 +1553,14 @@ const products = [
     ],
     "collections": "Activewear",
     "material": "Wool",
-    "gender": "Men",
+    "gender": "Women",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.pngarts.com/files/3/Black-Biker-Leather-Jacket-PNG-Photo.png",
         "altText": "Luxora Blouse 34 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1521336218319-3a5c3b4b8a1a?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.pngplay.com/wp-content/uploads/4/Leather-Jacket-PNG-Photos.png",
         "altText": "Luxora Blouse 34 lifestyle view"
       }
     ],
@@ -1770,11 +1609,11 @@ const products = [
     "gender": "Women",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1201514979628-0b1c2d3e4f5a?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://sugesswatch.com/cdn/shop/files/8c30fb06e6d13dc43e2b37be2eb7fa70.jpg?v=1732606757&width=823",
         "altText": "VelvetPeak Chrono Watch 35 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1530845641059-301cf9f4d3a5?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://sugesswatch.com/cdn/shop/files/37-1.jpg?v=1732606757&width=600",
         "altText": "VelvetPeak Chrono Watch 35 lifestyle view"
       }
     ],
@@ -1823,11 +1662,11 @@ const products = [
     "gender": "Men",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1433078133838-7d88d6b71a9a?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://invincible.in/cdn/shop/files/ANJ003_900x.jpg?v=1688464246",
         "altText": "Luxora Sports Bra 36 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1280543193106-123456abcdef?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://invincible.in/cdn/shop/products/InvincibleWomen_sMeshBackSportsBra-2_900x.jpg?v=1688464246",
         "altText": "Luxora Sports Bra 36 lifestyle view"
       }
     ],
@@ -1875,11 +1714,11 @@ const products = [
     "gender": "Unisex",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://axell.in/cdn/shop/files/Pitstop_Panda_Leather_Strap_1.png?v=1737534447&width=1440",
         "altText": "UrbanThread Chrono Watch 37 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1401342196704-1b8b2b5b3d6c?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://axell.in/cdn/shop/files/P34_a0a91489-8114-47fb-9db2-40137bd6434b.png?v=1737534449&width=720",
         "altText": "UrbanThread Chrono Watch 37 lifestyle view"
       }
     ],
@@ -1928,11 +1767,11 @@ const products = [
     "gender": "Men",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.tresmode.com/cdn/shop/files/the-heiden-brown-men-s-leather-loafers-tresmode-tresmode-1_800x.jpg?v=1755689716",
         "altText": "UrbanThread Loafers 38 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.tresmode.com/cdn/shop/files/the-heiden-brown-men-s-leather-loafers-tresmode-tresmode-6_800x.jpg?v=1755689717",
         "altText": "UrbanThread Loafers 38 lifestyle view"
       }
     ],
@@ -1979,11 +1818,11 @@ const products = [
     "gender": "Men",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.mydesignation.com/cdn/shop/files/dragon-hoodie-embroidered-677298.jpg?v=1732340639&width=750",
         "altText": "CoreStreet Hoodie 39 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1382737866405-7f7b9c8a6b5c?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.mydesignation.com/cdn/shop/files/dragon-hoodie-embroidered-537244.jpg?v=1732340639&width=750",
         "altText": "CoreStreet Hoodie 39 lifestyle view"
       }
     ],
@@ -2032,11 +1871,11 @@ const products = [
     "gender": "Unisex",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://xcdn.next.co.uk/common/items/default/default/itemimages/3_4Ratio/product/lge/E13884s2.jpg?im=Resize,width=750",
         "altText": "Modeify Cotton T-Shirt 40 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1422466541269-9bd3f0a6f7a2?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://xcdn.next.co.uk/common/items/default/default/itemimages/3_4Ratio/product/lge/E13884s6.jpg?im=Resize,width=750",
         "altText": "Modeify Cotton T-Shirt 40 lifestyle view"
       }
     ],
@@ -2082,11 +1921,11 @@ const products = [
     "gender": "Unisex",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1528701800489-20be9c62a3ca?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.beyoung.in/api/cache/catalog/products/new_winter_wear_5_10_2022/dark_blue_denim_jacket_for_men_base_02_12_2023_700x933.jpg",
         "altText": "NovaWear Denim Jacket 41 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1521335629791-ce4aec67dd47?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.beyoung.in/api/cache/catalog/products/new_winter_wear_5_10_2022/dark_blue_denim_jacket_for_men_back_27_11_2023_700x933.jpg",
         "altText": "NovaWear Denim Jacket 41 lifestyle view"
       }
     ],
@@ -2133,11 +1972,11 @@ const products = [
     "gender": "Men",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://powerlook.in/cdn/shop/files/dp11252521_1.jpg?v=1755939329&width=550",
         "altText": "UrbanThread Oxford Shirt 42 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1528701800485-5d1cdbbda37c?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://powerlook.in/cdn/shop/files/dp21252521_1.jpg?v=1762946229&width=550",
         "altText": "UrbanThread Oxford Shirt 42 lifestyle view"
       }
     ],
@@ -2185,11 +2024,11 @@ const products = [
     "gender": "Women",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1363995888170-0f8a7b6c5d4e?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://cdn.pixelbin.io/v2/falling-surf-7c8bb8/fyprod/t.resize(w:700,dpr:1)/products/pictures/item/free/original/000000410500688011/Dz2gdqb0bG-410500688011_1.jpg",
         "altText": "UrbanThread Puffer Jacket 43 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://cdn.pixelbin.io/v2/falling-surf-7c8bb8/fyprod/t.resize(w:700,dpr:1)/products/pictures/item/free/original/000000410500688011/x5s8_gzCq-410500688011_4.jpg",
         "altText": "UrbanThread Puffer Jacket 43 lifestyle view"
       }
     ],
@@ -2237,11 +2076,11 @@ const products = [
     "gender": "Unisex",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1514996937319-344454492b37?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://powerlook.in/cdn/shop/files/3_370de6e2-f864-4bff-8bf9-bb102e21a47d.jpg?v=1763370716&width=550",
         "altText": "Modeify Knit Sweater 44 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://powerlook.in/cdn/shop/files/1_11d1ba20-e2df-4fdd-9ca0-8fd0a60a7746.jpg?v=1763370716&width=550",
         "altText": "Modeify Knit Sweater 44 lifestyle view"
       }
     ],
@@ -2289,11 +2128,11 @@ const products = [
     "gender": "Women",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.davidgandywellwear.com/cdn/shop/products/Ultimate-Loopback-Hoodie-Black.jpg?v=1677258480&width=713",
         "altText": "StyleSphere Hoodie 45 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1503220317375-9bc0f6f4f8c6?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.davidgandywellwear.com/cdn/shop/products/ultimate-hoodie-black-2_66ec741e-fa5b-446a-954e-22cf9982dcae.jpg?v=1678615246&width=713",
         "altText": "StyleSphere Hoodie 45 lifestyle view"
       }
     ],
@@ -2341,11 +2180,11 @@ const products = [
     "gender": "Women",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1530845641059-301cf9f4d3a5?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://nobero.com/cdn/shop/files/1711517700660.png?v=1711518240",
         "altText": "CoreStreet Joggers 46 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1280543193106-123456abcdef?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://nobero.com/cdn/shop/products/1628066931dbce5b8eb43dc13287b8fdd7b9fef57f_1.webp?v=1711518240",
         "altText": "CoreStreet Joggers 46 lifestyle view"
       }
     ],
@@ -2392,11 +2231,11 @@ const products = [
     "gender": "Men",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1293116543123-abcdef123456?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://liverpool.co.in/cdn/shop/files/DSC07372.jpg?v=1705555294&width=713",
         "altText": "NovaWear Knit Sweater 47 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1422466541269-9bd3f0a6f7a2?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://liverpool.co.in/cdn/shop/files/DSC07377.jpg?v=1705555294&width=713",
         "altText": "NovaWear Knit Sweater 47 lifestyle view"
       }
     ],
@@ -2442,11 +2281,11 @@ const products = [
     "gender": "Women",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1602810318383-e377c9cc6cb3?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://assets-jiocdn.ajio.com/medias/sys_master/root/20240730/SWlB/66a903c36f60443f31d9b0cd/-473Wx593H-443053395-black-MODEL.jpg",
         "altText": "VelvetPeak Resort Shirt 48 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1433078133838-7d88d6b71a9a?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://assets-jiocdn.ajio.com/medias/sys_master/root/20240730/9pgG/66a90f0b6f60443f31d9e962/-473Wx593H-443053395-black-MODEL4.jpg",
         "altText": "VelvetPeak Resort Shirt 48 lifestyle view"
       }
     ],
@@ -2492,11 +2331,11 @@ const products = [
     "gender": "Men",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1503220317375-9bc0f6f4f8c6?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://colmanandcompany.com/Merchant2/graphics/00000001/PC590H_charcoal_flat_front_370x555.jpg",
         "altText": "BoldNove Performance Hoodie 49 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://cdn11.bigcommerce.com/s-d18iepu0cs/images/stencil/500x659/products/14929/94813/MQK00105_BL_LFS_HG_layer_comp&wid_800&hei_1000&fmt_jpeg&qlt_100_0&op_sharpen_0&resMode_norm&op_usm_0.5_1.0_0__89555.1681364352.jpg",
         "altText": "BoldNove Performance Hoodie 49 lifestyle view"
       }
     ],
@@ -2544,11 +2383,11 @@ const products = [
     "gender": "Men",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1585386959984-a41552231693?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://cdn1.ethoswatches.com/media/catalog/product/cache/6e5de5bc3d185d8179cdc7258143f41a/f/a/favre-leuba-sea-sky-reviva-l00-20212-112-02-105-multiple-1_1.jpg",
         "altText": "NovaWear Chrono Watch 50 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1363995888170-0f8a7b6c5d4e?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://cdn1.ethoswatches.com/media/catalog/product/cache/6e5de5bc3d185d8179cdc7258143f41a/f/a/favre-leuba-sea-sky-reviva-l00-20212-112-02-105-large_1.jpg",
         "altText": "NovaWear Chrono Watch 50 lifestyle view"
       }
     ],
@@ -2597,11 +2436,11 @@ const products = [
     "gender": "Unisex",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://mahetri.in/cdn/shop/products/13_0db566cb-d043-49e5-a3ca-6eabb08321ec_1400x1400.jpg?v=1655455016",
         "altText": "UrbanThread Leather Belt 51 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1585386959984-a41552231693?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://mahetri.in/cdn/shop/products/12_f10a40e9-8d22-4c88-8ecc-5d6ae28cc7f1_1400x1400.jpg?v=1655455016",
         "altText": "UrbanThread Leather Belt 51 lifestyle view"
       }
     ],
@@ -2625,8 +2464,8 @@ const products = [
     "weight": 2.49
   },
   {
-    "name": "CoreStreet Blouse 52",
-    "description": "CoreStreet Blouse crafted in Denim \u2014 designed for comfort and everyday style. Part of our Vacation Wear.",
+    "name": "CoreStreet Top 52",
+    "description": "CoreStreet Top crafted in Denim \u2014 designed for comfort and everyday style. Part of our Vacation Wear.",
     "price": 93.32,
     "discountPrice": 80.19,
     "countInStock": 85,
@@ -2648,11 +2487,11 @@ const products = [
     "gender": "Unisex",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1422466541269-9bd3f0a6f7a2?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://m.media-amazon.com/images/I/715W5ZaX2AL._SY879_.jpg",
         "altText": "CoreStreet Blouse 52 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://m.media-amazon.com/images/I/710CUoAidgL._SY741_.jpg",
         "altText": "CoreStreet Blouse 52 lifestyle view"
       }
     ],
@@ -2665,8 +2504,8 @@ const products = [
       "CoreStreet",
       "Vacation Wear"
     ],
-    "metaTitle": "CoreStreet Blouse 52 | Vacation Wear",
-    "metaDescription": "Buy CoreStreet Blouse 52 \u2014 Denim top wear perfect for unisex \u2014 shop vacation wear now.",
+    "metaTitle": "CoreStreet Top 52 | Vacation Wear",
+    "metaDescription": "Buy CoreStreet Top 52 \u2014 Denim top wear perfect for unisex \u2014 shop vacation wear now.",
     "metaKeywords": "CoreStreet,Blouse,Vacation Wear,Unisex",
     "dimensions": {
       "length": 67,
@@ -2700,11 +2539,11 @@ const products = [
     "gender": "Men",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1602810318383-e377c9cc6cb3?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.theirishstore.com/cdn/shop/files/CARDON07-P-awm10-mens-traditional-aran-sweater-cream-new.jpg?v=1760518748&width=1000",
         "altText": "NovaWear Knit Sweater 53 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.theirishstore.com/cdn/shop/files/AWM10CARDON07-PCARDONL07-P_2.jpg?v=1762171865&width=1000",
         "altText": "NovaWear Knit Sweater 53 lifestyle view"
       }
     ],
@@ -2753,11 +2592,11 @@ const products = [
     "gender": "Women",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1495128206892-2f1b6d6d5f3b?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://m.media-amazon.com/images/I/61XqnAisfNL._AC_SX569_.jpg",
         "altText": "Trendora Leather Jacket 54 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1503220317375-9bc0f6f4f8c6?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://m.media-amazon.com/images/I/71K2PDpRUCL._AC_SX569_.jpg",
         "altText": "Trendora Leather Jacket 54 lifestyle view"
       }
     ],
@@ -2804,11 +2643,11 @@ const products = [
     "gender": "Unisex",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://onemile.in/cdn/shop/files/CabinShirt_DreamBlue_Lifestyle1.jpg?v=1733477007&width=500",
         "altText": "UrbanThread Resort Shirt 55 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://onemile.in/cdn/shop/files/CabinShirt_DreamBlue_Lifestyle2.jpg?v=1733477007&width=500",
         "altText": "UrbanThread Resort Shirt 55 lifestyle view"
       }
     ],
@@ -2857,11 +2696,11 @@ const products = [
     "gender": "Men",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1520974721921-365af89669b2?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.rangeelagoa.com/cdn/shop/files/IMG_4955_740x.heic?v=1697617622",
         "altText": "Luxora Palazzo Pants 56 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1514996937319-344454492b37?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.rangeelagoa.com/cdn/shop/files/IMG20231019123855_740x.jpg?v=1697708110",
         "altText": "Luxora Palazzo Pants 56 lifestyle view"
       }
     ],
@@ -2907,11 +2746,11 @@ const products = [
     "gender": "Men",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1422466541269-9bd3f0a6f7a2?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://images.bewakoof.com/t1080/men-s-black-oversized-joggers-624660-1736445041-1.jpg",
         "altText": "Modeify Joggers 57 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://images.bewakoof.com/t1080/men-s-black-oversized-joggers-624660-1727428806-2.jpg",
         "altText": "Modeify Joggers 57 lifestyle view"
       }
     ],
@@ -2958,11 +2797,11 @@ const products = [
     "gender": "Unisex",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.shivanandnarresh.com/cdn/shop/files/SNSO24_53MS8294.jpg?v=1711120181",
         "altText": "NovaWear Resort Shirt 58 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.shivanandnarresh.com/cdn/shop/files/SNSO24_53MS8293.jpg?v=1711120181",
         "altText": "NovaWear Resort Shirt 58 lifestyle view"
       }
     ],
@@ -3011,11 +2850,11 @@ const products = [
     "gender": "Men",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1495128206892-2f1b6d6d5f3b?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.beyours.in/cdn/shop/files/ash-grey-oxford-shirt-4.jpg?v=1758389275&width=800",
         "altText": "Trendora Oxford Shirt 59 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1521336218319-3a5c3b4b8a1a?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.beyours.in/cdn/shop/files/3_49aa67c9-69b2-4776-892b-b9dc21f36595.jpg?v=1758389275&width=800",
         "altText": "Trendora Oxford Shirt 59 lifestyle view"
       }
     ],
@@ -3061,11 +2900,11 @@ const products = [
     "gender": "Men",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://theclothingfactory.in/cdn/shop/files/Theclothing-23-08-2325390_52783cb9-64ba-4353-b789-4fec54e9d0c8_800x.jpg?v=1743755417",
         "altText": "EchoLane Denim Jacket 60 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1602810318383-e377c9cc6cb3?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://cdn.shopify.com/s/files/1/0555/4195/6677/files/Theclothing-23-08-2325378_378d0105-45c8-4762-a44f-ce3e537c2476_3000x.jpg?v=1743755417",
         "altText": "EchoLane Denim Jacket 60 lifestyle view"
       }
     ],
@@ -3114,11 +2953,11 @@ const products = [
     "gender": "Women",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://proriders.in/cdn/shop/files/PR6238-Denim6.jpg?v=1703656373&width=493",
         "altText": "UrbanThread Cotton T-Shirt 61 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://proriders.in/cdn/shop/files/PR6238-Denim1.jpg?v=1703656373&width=493",
         "altText": "UrbanThread Cotton T-Shirt 61 lifestyle view"
       }
     ],
@@ -3167,11 +3006,11 @@ const products = [
     "gender": "Women",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1495128206892-2f1b6d6d5f3b?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://img.tatacliq.com/images/i22//437Wx649H/MP000000013036999_437Wx649H_202503131927564.jpeg",
         "altText": "StyleSphere Sports Bra 62 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1520975918318-3a5c3b4b8a0e?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://img.tatacliq.com/images/i22//437Wx649H/MP000000013036999_437Wx649H_202503131927542.jpeg",
         "altText": "StyleSphere Sports Bra 62 lifestyle view"
       }
     ],
@@ -3220,11 +3059,11 @@ const products = [
     "gender": "Men",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1528701800485-5d1cdbbda37c?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.shopstaple.in/cdn/shop/files/staple0358.jpg?v=1754979215&width=1200",
         "altText": "VelvetPeak Trench Coat 63 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1401342196704-1b8b2b5b3d6c?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.shopstaple.in/cdn/shop/files/staple0366.jpg?v=1754979215&width=1920",
         "altText": "VelvetPeak Trench Coat 63 lifestyle view"
       }
     ],
@@ -3248,13 +3087,13 @@ const products = [
     "weight": 0.71
   },
   {
-    "name": "Luxora Sports Bra 64",
-    "description": "Luxora Sports Bra crafted in Viscose \u2014 designed for comfort and everyday style. Part of our Formal Fits.",
+    "name": "Luxora Sports Shoes 64",
+    "description": "Luxora Sports Shoes crafted in Viscose \u2014 designed for comfort and everyday style. Part of our Formal Fits.",
     "price": 220.16,
     "discountPrice": 184.73,
     "countInStock": 36,
     "sku": "LU0064",
-    "category": "Athleisure",
+    "category": "Footwear",
     "brand": "Luxora",
     "sizes": [
       "S",
@@ -3273,12 +3112,12 @@ const products = [
     "gender": "Men",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=2400&q=80",
-        "altText": "Luxora Sports Bra 64 front view"
+        "url": "https://calcetto.in/cdn/shop/files/PIX_5749_0603df7e-4d9a-4227-a7f6-12911cfa8187.jpg?v=1744200136&width=1100",
+        "altText": "Luxora Sports Shoes 64 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1330316456455-1a2b3c4d5e6f?auto=format&fit=crop&w=2400&q=80",
-        "altText": "Luxora Sports Bra 64 lifestyle view"
+        "url": "https://calcetto.in/cdn/shop/files/PIX_5754_fb7987cd-41a8-42e2-96f0-54ecc79d72b0.jpg?v=1744200136&width=1100",
+        "altText": "Luxora Sports Shoes 64 lifestyle view"
       }
     ],
     "isFeatured": false,
@@ -3290,9 +3129,9 @@ const products = [
       "Luxora",
       "Formal Fits"
     ],
-    "metaTitle": "Luxora Sports Bra 64 | Formal Fits",
-    "metaDescription": "Buy Luxora Sports Bra 64 \u2014 Viscose athleisure perfect for men \u2014 shop formal fits now.",
-    "metaKeywords": "Luxora,Sports Bra,Formal Fits,Men",
+    "metaTitle": "Luxora Sports Shoes 64 | Formal Fits",
+    "metaDescription": "Buy Luxora Sports Shoes 64 \u2014 Viscose athleisure perfect for men \u2014 shop formal fits now.",
+    "metaKeywords": "Luxora,Sports Shoes,Formal Fits,Men",
     "dimensions": {
       "length": 54,
       "width": 67,
@@ -3326,11 +3165,11 @@ const products = [
     "gender": "Men",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://veirdo.in/cdn/shop/files/30_2.jpg?v=1754546336&width=360",
         "altText": "Modeify Hoodie 65 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1503220317375-9bc0f6f4f8c6?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://veirdo.in/cdn/shop/files/Smile_Purple_Front_Typographic_Printed_Hoodie.jpg?v=1754546337&width=360",
         "altText": "Modeify Hoodie 65 lifestyle view"
       }
     ],
@@ -3379,11 +3218,11 @@ const products = [
     "gender": "Men",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1382737866405-7f7b9c8a6b5c?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://playr.in/cdn/shop/files/1_157bfbe5-2e60-4129-8af2-315cd2766bf8.jpg?v=1756796485&width=1800",
         "altText": "UrbanThread Training Tee 66 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1585386959984-a41552231693?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://playr.in/cdn/shop/files/1_6873b774-156c-4ef4-862b-94cf6cf8792d.jpg?v=1761999637&width=1800",
         "altText": "UrbanThread Training Tee 66 lifestyle view"
       }
     ],
@@ -3429,11 +3268,11 @@ const products = [
     "gender": "Men",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1342464360855-9a8b7c6d5e4f?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.uniqlo.com/jp/ja/contents/feature/masterpiece/common/img/product/item_05_kv.jpg?250710",
         "altText": "StyleSphere Cotton T-Shirt 67 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1280543193106-123456abcdef?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.uniqlo.com/jp/ja/contents/feature/masterpiece/common/img/product/item_05_03_02.jpg?250710",
         "altText": "StyleSphere Cotton T-Shirt 67 lifestyle view"
       }
     ],
@@ -3481,11 +3320,11 @@ const products = [
     "gender": "Men",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1382737866405-7f7b9c8a6b5c?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.wearduds.com/cdn/shop/files/side_seam_baggy_cotton_jogger_black_mens_fashion_comfortable_streetwear_style.png?v=1756464587&width=600",
         "altText": "UrbanThread Joggers 68 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1363995888170-0f8a7b6c5d4e?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.wearduds.com/cdn/shop/files/side-seam-baggy-cotton-joggers-black-streetwear-casual-comfort.png?v=1756464586&width=600",
         "altText": "UrbanThread Joggers 68 lifestyle view"
       }
     ],
@@ -3534,11 +3373,11 @@ const products = [
     "gender": "Men",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://rukminim2.flixcart.com/image/832/832/xif0q/jacket/f/c/1/s-1-no-m-c-bodyguard-original-imahbwgus8xrucxu.jpeg?q=70&crop=false",
         "altText": "UrbanThread Leather Jacket 69 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1474631245212-32dc3c8310f3?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://rukminim2.flixcart.com/image/832/832/xif0q/jacket/0/e/q/s-1-no-m-c-bodyguard-original-imahbwguyzfgeekd.jpeg?q=70&crop=false",
         "altText": "UrbanThread Leather Jacket 69 lifestyle view"
       }
     ],
@@ -3587,11 +3426,11 @@ const products = [
     "gender": "Unisex",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1401342196704-1b8b2b5b3d6c?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://assets-jiocdn.ajio.com/medias/sys_master/root/20241220/EZaC/6765049dc148fa1b305010bc/-473Wx593H-464430300-grey-MODEL.jpg",
         "altText": "Luxora Slim Fit Jeans 70 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1416339218136-9f3cf3b2f6a8?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://assets-jiocdn.ajio.com/medias/sys_master/root/20241220/hhMQ/6765073dc148fa1b30502127/-473Wx593H-464430300-grey-MODEL3.jpg",
         "altText": "Luxora Slim Fit Jeans 70 lifestyle view"
       }
     ],
@@ -3637,11 +3476,11 @@ const products = [
     "gender": "Men",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1474631245212-32dc3c8310f3?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://banjaaran.in/cdn/shop/files/Vanrajya_cropped_2.jpg?v=1725616012&width=1100",
         "altText": "VelvetPeak Loafers 71 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1474631245212-32dc3c8310f3?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://banjaaran.in/cdn/shop/files/06724_Banjaaran-03_05.jpg?v=1720640156&width=1946",
         "altText": "VelvetPeak Loafers 71 lifestyle view"
       }
     ],
@@ -3688,11 +3527,11 @@ const products = [
     "gender": "Unisex",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.montecarlo.in/cdn/shop/products/201819FW-1-7_9.jpg?v=1721213985&width=800",
         "altText": "NovaWear Loafers 72 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.montecarlo.in/cdn/shop/products/201819FW-1-7_1.jpg?v=1721213985&width=800",
         "altText": "NovaWear Loafers 72 lifestyle view"
       }
     ],
@@ -3738,11 +3577,11 @@ const products = [
     "gender": "Unisex",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1520975918318-3a5c3b4b8a0e?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.reccy.in/cdn/shop/files/1_39f9cede-5b80-4fe1-957b-80ac4b53c595.webp?v=1763371392&width=713",
         "altText": "NovaWear Joggers 73 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1474631245212-32dc3c8310f3?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.jiomart.com/images/product/original/443004222_ltgrey/joggers-with-drawstring-waist-model-443004222_ltgrey-0-202301162233.jpg?im=Resize=(500,630)",
         "altText": "NovaWear Joggers 73 lifestyle view"
       }
     ],
@@ -3791,11 +3630,11 @@ const products = [
     "gender": "Women",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1401342196704-1b8b2b5b3d6c?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://lederwarren.com/cdn/shop/files/Men_s_Leather_Boots_NHBTBR_1.jpg?crop=center&height=1282&v=1721900521&width=1080",
         "altText": "CoreStreet Leather Boots 74 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1382737866405-7f7b9c8a6b5c?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://lederwarren.com/cdn/shop/files/Men_s_Leather_Boots_NHBTBR_2.jpg?crop=center&height=1282&v=1721900536&width=1080",
         "altText": "CoreStreet Leather Boots 74 lifestyle view"
       }
     ],
@@ -3843,11 +3682,11 @@ const products = [
     "gender": "Men",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1280543193106-123456abcdef?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.newtheoryclothing.com/cdn/shop/files/loop_jogger_grey_3_0032a5dc-b711-4b94-8890-e2bd5e4b76a9.jpg?v=1697877734&width=800",
         "altText": "StyleSphere Joggers 75 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1521336218319-3a5c3b4b8a1a?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.newtheoryclothing.com/cdn/shop/files/Loop_jogger_grey_11_d7a4c318-d190-45ed-8e5c-6ade170fc2a8.jpg?v=1697877780&width=800",
         "altText": "StyleSphere Joggers 75 lifestyle view"
       }
     ],
@@ -3895,11 +3734,11 @@ const products = [
     "gender": "Unisex",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1293116543123-abcdef123456?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.knitcroaddict.com/wp-content/uploads/2022/11/Knitted-sweater-pattern-2-960x960.png.webp",
         "altText": "BoldNove Knit Sweater 76 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.knitcroaddict.com/wp-content/uploads/2025/06/crochet-top-Etsy-3-728x728.png.webp",
         "altText": "BoldNove Knit Sweater 76 lifestyle view"
       }
     ],
@@ -3923,13 +3762,13 @@ const products = [
     "weight": 1.22
   },
   {
-    "name": "UrbanThread Blouse 77",
-    "description": "UrbanThread Blouse crafted in Viscose \u2014 designed for comfort and everyday style. Part of our Denim Collection.",
+    "name": "UrbanThread Jeans 77",
+    "description": "UrbanThread Jeans crafted in Viscose \u2014 designed for comfort and everyday style. Part of our Denim Collection.",
     "price": 43.98,
     "discountPrice": 38.52,
     "countInStock": 86,
     "sku": "UR0077",
-    "category": "Top Wear",
+    "category": "Bottom Wear",
     "brand": "UrbanThread",
     "sizes": [
       "M",
@@ -3946,12 +3785,12 @@ const products = [
     "gender": "Women",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1280543193106-123456abcdef?auto=format&fit=crop&w=2400&q=80",
-        "altText": "UrbanThread Blouse 77 front view"
+        "url": "https://cantabilshop.com/cdn/shop/products/MDNM00403_LTHILLIUM_1.jpg?v=1757052556&width=990",
+        "altText": "UrbanThread Jeans 77 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=2400&q=80",
-        "altText": "UrbanThread Blouse 77 lifestyle view"
+        "url": "https://cantabilshop.com/cdn/shop/products/MDNM00403_LTHILLIUM_2.jpg?v=1757052556&width=990",
+        "altText": "UrbanThread Jeans 77 lifestyle view"
       }
     ],
     "isFeatured": true,
@@ -3963,8 +3802,8 @@ const products = [
       "UrbanThread",
       "Denim Collection"
     ],
-    "metaTitle": "UrbanThread Blouse 77 | Denim Collection",
-    "metaDescription": "Buy UrbanThread Blouse 77 \u2014 Viscose top wear perfect for women \u2014 shop denim collection now.",
+    "metaTitle": "UrbanThread Jeans 77 | Denim Collection",
+    "metaDescription": "Buy UrbanThread Jeans 77 \u2014 Viscose top wear perfect for women \u2014 shop denim collection now.",
     "metaKeywords": "UrbanThread,Blouse,Denim Collection,Women",
     "dimensions": {
       "length": 77,
@@ -3998,11 +3837,11 @@ const products = [
     "gender": "Unisex",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1530845641059-301cf9f4d3a5?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/475629/item/ingoods_09_475629_3x4.jpg?width=369",
         "altText": "VelvetPeak Sports Bra 78 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1521335629791-ce4aec67dd47?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/475629/sub/ingoods_475629_sub7_3x4.jpg?width=369",
         "altText": "VelvetPeak Sports Bra 78 lifestyle view"
       }
     ],
@@ -4051,11 +3890,11 @@ const products = [
     "gender": "Unisex",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://img.runningwarehouse.com/watermark/rsg.php?path=/content_images/landing-pages/Running_Shoe_Components_2024/3fb43582-c9e9-45f3-8048-b96e5ad2df8b.jpeg&nw=1560",
         "altText": "Luxora Running Sneakers 79 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1474631245212-32dc3c8310f3?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://img.runningwarehouse.com/watermark/rsg.php?path=/content_images/landing-pages/Running_Shoe_Components_2024/6fd054b6-fa9a-4886-a7a9-7c2675cf667d.jpeg&nw=1560",
         "altText": "Luxora Running Sneakers 79 lifestyle view"
       }
     ],
@@ -4103,11 +3942,11 @@ const products = [
     "gender": "Men",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1503220317375-9bc0f6f4f8c6?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.nappadori.com/cdn/shop/files/everyday-classic-belt-1.jpg?v=1755155414&width=900",
         "altText": "BoldNove Leather Belt 80 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1363995888170-0f8a7b6c5d4e?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.nappadori.com/cdn/shop/files/everyday-classic-belt-2.jpg?v=1755155414&width=720",
         "altText": "BoldNove Leather Belt 80 lifestyle view"
       }
     ],
@@ -4156,11 +3995,11 @@ const products = [
     "gender": "Unisex",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1422466541269-9bd3f0a6f7a2?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://fromthestreets.in/cdn/shop/files/FTS_Hoodie_Mockup_front_4_1_1800x1800.png?v=1729009033",
         "altText": "EchoLane Hoodie 81 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1495128206892-2f1b6d6d5f3b?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://fromthestreets.in/cdn/shop/files/FTS_Hoodie_Mockup_Back_4.png?v=1728795848",
         "altText": "EchoLane Hoodie 81 lifestyle view"
       }
     ],
@@ -4206,11 +4045,11 @@ const products = [
     "gender": "Men",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1520974721921-365af89669b2?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.fizzygoblet.com/cdn/shop/files/Blacklisteddomesticcover_11zon.jpg?v=1758278598&width=600",
         "altText": "UrbanThread Loafers 82 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1422466541269-9bd3f0a6f7a2?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.fizzygoblet.com/cdn/shop/files/Blacklisteddomestic-1_11zon.jpg?v=1758278598&width=600",
         "altText": "UrbanThread Loafers 82 lifestyle view"
       }
     ],
@@ -4258,11 +4097,11 @@ const products = [
     "gender": "Unisex",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1280543193106-123456abcdef?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.sujatra.com/cdn/shop/files/DSC01100copy_4d20c671-1320-428c-a7b0-3429a3f608bd_1024x1024.jpg?v=1712465983",
         "altText": "CoreStreet Pleated Skirt 83 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1495128206892-2f1b6d6d5f3b?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.sujatra.com/cdn/shop/files/DSC01160copy_eac4cae7-fb83-4297-b6b5-de00ea15ae81_1024x1024.jpg?v=1712466000",
         "altText": "CoreStreet Pleated Skirt 83 lifestyle view"
       }
     ],
@@ -4311,11 +4150,11 @@ const products = [
     "gender": "Unisex",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1401342196704-1b8b2b5b3d6c?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://image.hm.com/assets/hm/b6/b0/b6b049fcb1781124caf1eb382c6447edc2dfd1fa.jpg?imwidth=2160",
         "altText": "CoreStreet Track Pants 84 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://image.hm.com/assets/hm/04/f8/04f811b8cf6cb255974d74394c1685e0a35da401.jpg?imwidth=2160",
         "altText": "CoreStreet Track Pants 84 lifestyle view"
       }
     ],
@@ -4362,11 +4201,11 @@ const products = [
     "gender": "Unisex",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://tirupurbrands.in/wp-content/uploads/2022/06/poly.jpg",
         "altText": "StyleSphere Cotton T-Shirt 85 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1514996937319-344454492b37?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://tirupurbrands.in/wp-content/uploads/2022/06/2.jpg",
         "altText": "StyleSphere Cotton T-Shirt 85 lifestyle view"
       }
     ],
@@ -4412,11 +4251,11 @@ const products = [
     "gender": "Unisex",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1433078133838-7d88d6b71a9a?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.uniqlo.com/jp/ja/contents/feature/masterpiece/common/au/img/product/item_22_kv.jpg?250116",
         "altText": "VelvetPeak Chino Pants 86 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1351502704218-8b7a6c5d4e3f?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.uniqlo.com/jp/ja/contents/feature/masterpiece/common/au/img/product/item_22_03_02.jpg?250116",
         "altText": "VelvetPeak Chino Pants 86 lifestyle view"
       }
     ],
@@ -4465,11 +4304,11 @@ const products = [
     "gender": "Women",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://static.cilory.com/734126-thickbox_default/nologo-cotton-t-shirt-with-pocket-details.jpg",
         "altText": "BoldNove Cotton T-Shirt 87 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1520975918318-3a5c3b4b8a0e?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://static.cilory.com/734123-thickbox_default/nologo-cotton-t-shirt-with-pocket-details.jpg",
         "altText": "BoldNove Cotton T-Shirt 87 lifestyle view"
       }
     ],
@@ -4516,11 +4355,11 @@ const products = [
     "gender": "Unisex",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1401342196704-1b8b2b5b3d6c?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://campussutra.com/cdn/shop/products/CSMAWJKD9047SBU_1.webp?v=1707398550&width=1600",
         "altText": "Modeify Denim Jacket 88 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1521336218319-3a5c3b4b8a1a?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://campussutra.com/cdn/shop/products/CSMAWJKD9047SBU_4.webp?v=1707398550&width=1600",
         "altText": "Modeify Denim Jacket 88 lifestyle view"
       }
     ],
@@ -4568,11 +4407,11 @@ const products = [
     "gender": "Women",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1363995888170-0f8a7b6c5d4e?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://firstlens.in/cdn/shop/files/First-Lens-Polygonal-Sunglasses-Gold-Gray.png?v=1755274691&width=1000",
         "altText": "UrbanThread Sunglasses 89 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://firstlens.in/cdn/shop/files/First-Lens-Polygonal-Sunglasses-Black-Gold-3.png?v=1755274691&width=1000",
         "altText": "UrbanThread Sunglasses 89 lifestyle view"
       }
     ],
@@ -4618,11 +4457,11 @@ const products = [
     "gender": "Unisex",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://hips.hearstapps.com/hmg-prod/images/london-str-f23-0430-64146f9fe4c0d.jpg?crop=0.579xw:0.868xh;0.245xw,0.0938xh&resize=1120:*",
         "altText": "Trendora Bomber Jacket 90 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1503341452709-9c6b7b3d2c6f?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://media.gq.com.mx/photos/6206a11db3938d1f596f8e74/16:9/w_1920,c_limit/bomber-jackets-para-hombre-en-tendencia-2022.jpg",
         "altText": "Trendora Bomber Jacket 90 lifestyle view"
       }
     ],
@@ -4671,11 +4510,11 @@ const products = [
     "gender": "Women",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://finebuy.co.in/wp-content/uploads/2024/06/WhatsApp-Image-2024-06-28-at-11.32.02-AM.webp",
         "altText": "Luxora Leather Jacket 91 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1416339218136-9f3cf3b2f6a8?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://finebuy.co.in/wp-content/uploads/2024/06/royal2.webp",
         "altText": "Luxora Leather Jacket 91 lifestyle view"
       }
     ],
@@ -4724,11 +4563,11 @@ const products = [
     "gender": "Unisex",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1330316456455-1a2b3c4d5e6f?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://assets-jiocdn.ajio.com/medias/sys_master/root/20250617/a8MD/68514d5a55340d4b4fb95235/-473Wx593H-700704046-red-MODEL.jpg",
         "altText": "StyleSphere Leather Jacket 92 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1514996937319-344454492b37?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://assets-jiocdn.ajio.com/medias/sys_master/root/20250617/fcBN/68514d5a55340d4b4fb951c1/-473Wx593H-700704046-red-MODEL2.jpg",
         "altText": "StyleSphere Leather Jacket 92 lifestyle view"
       }
     ],
@@ -4776,11 +4615,11 @@ const products = [
     "gender": "Women",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1530845641059-301cf9f4d3a5?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://assets.newme.asia/wp-content/uploads/2024/06/1410062241e8810f/NM-PRC-133-SKT-24-JUN-6290-WHITE(1).webp",
         "altText": "CoreStreet Pleated Skirt 93 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1528701800485-5d1cdbbda37c?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://i5.walmartimages.com/asr/5645372c-cf25-4fa8-b7e0-dca549a0b652.2f00f631fdeef5556d6282e25101e768.jpeg?odnHeight=640&odnWidth=640&odnBg=FFFFFF",
         "altText": "CoreStreet Pleated Skirt 93 lifestyle view"
       }
     ],
@@ -4827,11 +4666,11 @@ const products = [
     "gender": "Unisex",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1503341452709-9c6b7b3d2c6f?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://assets0.mirraw.com/images/11327736/White_Mirror_gota_Palazzo_%284%29_zoom.jpeg?1706794822",
         "altText": "Modeify Palazzo Pants 94 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1528701800485-5d1cdbbda37c?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://assets0.mirraw.com/images/11327739/White_Mirror_gota_Palazzo_%281%29_zoom.jpeg?1678975764",
         "altText": "Modeify Palazzo Pants 94 lifestyle view"
       }
     ],
@@ -4855,8 +4694,8 @@ const products = [
     "weight": 0.8
   },
   {
-    "name": "CoreStreet Sports Bra 95",
-    "description": "CoreStreet Sports Bra crafted in Leather \u2014 designed for comfort and everyday style. Part of our Winter Vibes.",
+    "name": "CoreStreet Sports Top 95",
+    "description": "CoreStreet Sports Top crafted in Leather \u2014 designed for comfort and everyday style. Part of our Winter Vibes.",
     "price": 109.75,
     "discountPrice": 97.68,
     "countInStock": 126,
@@ -4879,12 +4718,12 @@ const products = [
     "gender": "Unisex",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1520975918318-3a5c3b4b8a0e?auto=format&fit=crop&w=2400&q=80",
-        "altText": "CoreStreet Sports Bra 95 front view"
+        "url": "https://img.tatacliq.com/images/i27//437Wx649H/MP000000024943675_437Wx649H_202510130324441.jpeg",
+        "altText": "CoreStreet Sports Top 95 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1293116543123-abcdef123456?auto=format&fit=crop&w=2400&q=80",
-        "altText": "CoreStreet Sports Bra 95 lifestyle view"
+        "url": "https://img.tatacliq.com/images/i27//437Wx649H/MP000000024943675_437Wx649H_202510130324372.jpeg",
+        "altText": "CoreStreet Sports Top 95 lifestyle view"
       }
     ],
     "isFeatured": true,
@@ -4931,11 +4770,11 @@ const products = [
     "gender": "Women",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1602810318383-e377c9cc6cb3?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://sassafras.in/cdn/shop/products/SFJEAN0176-1_800x.jpg?v=1757499790",
         "altText": "CoreStreet Slim Fit Jeans 96 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1521336218319-3a5c3b4b8a1a?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://sassafras.in/cdn/shop/products/SFJEAN0176-2_ddd62383-63a4-457e-b21b-ba83f2c9dee1_800x.jpg?v=1757499790",
         "altText": "CoreStreet Slim Fit Jeans 96 lifestyle view"
       }
     ],
@@ -4981,11 +4820,11 @@ const products = [
     "gender": "Men",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1433078133838-7d88d6b71a9a?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://xcdn.next.co.uk/Common/Items/Default/Default/ItemImages/AltItemShot/315x472/724855s.jpg",
         "altText": "CoreStreet Oxford Shirt 97 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1528701800485-5d1cdbbda37c?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://xcdn.next.co.uk/common/Items/Default/Default/ItemImages/AltItemShot/315x472/724855s3.jpg",
         "altText": "CoreStreet Oxford Shirt 97 lifestyle view"
       }
     ],
@@ -5032,11 +4871,11 @@ const products = [
     "gender": "Women",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://imagescdn.pantaloons.com/img/app/product/9/992051-13183626.jpg?auto=format&w=450",
         "altText": "EchoLane Slim Fit Jeans 98 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1530845641059-301cf9f4d3a5?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://imagescdn.pantaloons.com/img/app/product/9/992051-13183627.jpg?auto=format&w=450",
         "altText": "EchoLane Slim Fit Jeans 98 lifestyle view"
       }
     ],
@@ -5084,11 +4923,11 @@ const products = [
     "gender": "Unisex",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1293116543123-abcdef123456?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://powerlook.in/cdn/shop/files/1406111_7.jpg?v=1758717438&width=550",
         "altText": "EchoLane Knit Sweater 99 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1351502704218-8b7a6c5d4e3f?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://powerlook.in/cdn/shop/files/1406111_2_e03ce5c1-7c2f-4c72-b078-0db4c25dd73d.jpg?v=1762840487&width=550",
         "altText": "EchoLane Knit Sweater 99 lifestyle view"
       }
     ],
@@ -5112,7 +4951,7 @@ const products = [
     "weight": 2.12
   },
   {
-    "name": "NovaWear Training Tee 100",
+    "name": "NovaWear Training Tee 10",
     "description": "NovaWear Training Tee crafted in Cotton \u2014 designed for comfort and everyday style. Part of our Urban Essentials.",
     "price": 64.83,
     "discountPrice": 55.68,
@@ -5134,11 +4973,11 @@ const products = [
     "gender": "Unisex",
     "images": [
       {
-        "url": "https://images.unsplash.com/photo-1602810318383-e377c9cc6cb3?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.myprotein.co.in/images?url=https://static.thcdn.com/productimg/original/14680353-1035101755281187.jpg&format=webp&auto=avif&crop=1100,1200,smart",
         "altText": "NovaWear Training Tee 100 front view"
       },
       {
-        "url": "https://images.unsplash.com/photo-1363995888170-0f8a7b6c5d4e?auto=format&fit=crop&w=2400&q=80",
+        "url": "https://www.myprotein.co.in/images?url=https://static.thcdn.com/productimg/original/14680362-6095101755442293.jpg&format=webp&auto=avif&crop=1100,1200,smart",
         "altText": "NovaWear Training Tee 100 lifestyle view"
       }
     ],

@@ -56,7 +56,7 @@ const createProduct = async (req, res) => {
   }
 };
 
-// Update a product
+// ✅ Update a product (backend/controllers/productController.js)
 const updateProduct = async (req, res) => {
   try {
     const {
@@ -82,37 +82,40 @@ const updateProduct = async (req, res) => {
     } = req.body;
 
     const product = await Product.findById(req.params.id);
+    if (!product) return res.status(404).json({ message: "Product not found" });
 
-    if (product) {
-      product.name = name || product.name;
-      product.description = description || product.description;
-      product.price = price || product.price;
-      product.discountPrice = discountPrice || product.discountPrice;
-      product.countInStock = countInStock || product.countInStock;
-      product.brand = brand || product.brand;
-      product.category = category || product.category;
-      product.sizes = sizes || product.sizes;
-      product.colors = colors || product.colors;
-      product.collections = collections || product.collections;
-      product.material = material || product.material;
-      product.gender = gender || product.gender;
-      product.images = images || product.images;
-      product.isFeatured =
-        isFeatured !== undefined ? isFeatured : product.isFeatured;
-      product.isPublished =
-        isPublished !== undefined ? isPublished : product.isPublished;
-      product.tags = tags || product.tags;
-      product.dimensions = dimensions || product.dimensions;
-      product.weight = weight || product.weight;
-      product.sku = sku || product.sku;
+    // Basic updates
+    product.name = name || product.name;
+    product.description = description || product.description;
+    product.price = price || product.price;
+    product.discountPrice = discountPrice || product.discountPrice;
+    product.countInStock = countInStock || product.countInStock;
+    product.brand = brand || product.brand;
+    product.category = category || product.category;
+    product.sizes = sizes || product.sizes;
+    product.colors = colors || product.colors;
+    product.collections = collections || product.collections;
+    product.material = material || product.material;
+    product.gender = gender || product.gender;
+    product.isFeatured = isFeatured ?? product.isFeatured;
+    product.isPublished = isPublished ?? product.isPublished;
+    product.tags = tags || product.tags;
+    product.dimensions = dimensions || product.dimensions;
+    product.weight = weight || product.weight;
+    product.sku = sku || product.sku;
 
-      const updatedProduct = await product.save();
-      res.status(200).json(updatedProduct);
-    } else {
-      res.status(404).json({ message: "Product not found" });
+    // ✅ Safely update images
+    if (images && Array.isArray(images)) {
+      product.images = images.map((img) => ({
+        url: img.url || img,
+        public_id: img.public_id || null,
+      }));
     }
+
+    const updatedProduct = await product.save();
+    res.status(200).json(updatedProduct);
   } catch (error) {
-    console.log(error);
+    console.error("Error updating product:", error);
     return res.status(500).json({ message: "Server error" });
   }
 };

@@ -1,19 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import axios from "axios";
-import { fetchProductDetails } from "../../redux/slices/productsSlice";
-import { updateProduct } from "../../redux/slices/adminProductSlice";
+import { createProduct } from "../../redux/slices/adminProductSlice";
 import PremiumLoader from "../Common/PremiumLoader";
 
-const EditProductsPage = () => {
+const CreateProductsPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { id } = useParams();
-  const { selectedProduct, loading, error } = useSelector(
-    (state) => state.products
-  );
 
   const [productData, setProductData] = useState({
     name: "",
@@ -32,29 +27,15 @@ const EditProductsPage = () => {
   });
 
   const [uploading, setUploading] = useState(false);
-  const [deleting, setDeleting] = useState(null); // track which image is being deleted
-
-  useEffect(() => {
-    if (id) dispatch(fetchProductDetails(id));
-  }, [dispatch, id]);
-
-  useEffect(() => {
-  if (selectedProduct) {
-    setProductData({
-      ...selectedProduct,
-      images: selectedProduct.images.map((img) =>
-        typeof img === "string" ? { url: img, public_id: null } : img
-      ),
-    });
-  }
-}, [selectedProduct]);
-
+  const [deleting, setDeleting] = useState(null);
+  const [submitting, setSubmitting] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setProductData((prev) => ({ ...prev, [name]: value }));
   };
 
+  // ✅ Upload Image
   const handleFileUpload = async (e) => {
     const file = e.target.files[0];
     if (!file) return;
@@ -86,49 +67,56 @@ const EditProductsPage = () => {
     }
   };
 
- const handleDeleteImage = async (public_id, url) => {
-  if (!public_id) {
-    console.warn(" Image has no public_id, skipping Cloudinary deletion.");
-    // Just remove it from the local state if you want
-    setProductData((prev) => ({
-      ...prev,
-      images: prev.images.filter((img) => img.url !== url),
-    }));
-    return;
-  }
+  // ✅ Delete Image
+  const handleDeleteImage = async (public_id, url) => {
+    if (!public_id) {
+      console.warn("⚠️ No public_id found, removing locally only.");
+      setProductData((prev) => ({
+        ...prev,
+        images: prev.images.filter((img) => img.url !== url),
+      }));
+      return;
+    }
 
-  try {
-    console.log("🟢 Deleting image with public_id:", public_id);
-    setDeleting(public_id);
+    try {
+      setDeleting(public_id);
+      await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/api/upload/delete`, {
+        params: { public_id },
+      });
 
-    await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/api/upload/delete`, {
-      params: { public_id },
-    });
-
-    setProductData((prev) => ({
-      ...prev,
-      images: prev.images.filter((img) => img.public_id !== public_id),
-    }));
-  } catch (err) {
-    console.error("Error deleting image:", err);
-  } finally {
-    setDeleting(null);
-  }
-};
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    dispatch(updateProduct({ id, productData }));
-    navigate("/admin/products");
+      setProductData((prev) => ({
+        ...prev,
+        images: prev.images.filter((img) => img.public_id !== public_id),
+      }));
+    } catch (err) {
+      console.error("Error deleting image:", err);
+    } finally {
+      setDeleting(null);
+    }
   };
 
-  if (loading) return <PremiumLoader />;
-  if (error)
-    return (
-      <div className="text-center text-[var(--color-error)] py-10">
-        Error: {error}
-      </div>
-    );
+  // ✅ Submit Form
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // --- Basic Validation ---
+    if (!productData.category || !productData.collections || !productData.gender) {
+      alert("Please select category, collection, and gender before submitting.");
+      return;
+    }
+
+    setSubmitting(true);
+    try {
+      await dispatch(createProduct(productData));
+      navigate("/admin/products");
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  if (submitting) return <PremiumLoader />;
 
   return (
     <div className="max-w-5xl mx-auto p-6 text-[var(--color-text-primary)]">
@@ -138,7 +126,7 @@ const EditProductsPage = () => {
         transition={{ duration: 0.3 }}
         className="text-3xl font-bold mb-6 text-[var(--color-accent)]"
       >
-        Edit Product
+        Create New Product
       </motion.h2>
 
       <motion.form
@@ -218,7 +206,62 @@ const EditProductsPage = () => {
             value={productData.sku}
             onChange={handleChange}
             className="w-full p-3 rounded-md bg-[var(--color-bg)] border border-[var(--color-border)] focus:ring-2 focus:ring-[var(--color-accent)]"
+            required
           />
+        </div>
+
+        {/* --- Category, Collection, Gender --- */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          {/* Category */}
+          <div>
+            <label className="block text-sm font-medium mb-2 text-[var(--color-text-secondary)]">
+              Category
+            </label>
+            <input
+              type="text"
+              name="category"
+              value={productData.category}
+              onChange={handleChange}
+              placeholder="e.g. Shirts, Hoodies"
+              className="w-full p-3 rounded-md bg-[var(--color-bg)] border border-[var(--color-border)] focus:ring-2 focus:ring-[var(--color-accent)]"
+              required
+            />
+          </div>
+
+          {/* Collections */}
+          <div>
+            <label className="block text-sm font-medium mb-2 text-[var(--color-text-secondary)]">
+              Collection
+            </label>
+            <input
+              type="text"
+              name="collections"
+              value={productData.collections}
+              onChange={handleChange}
+              placeholder="e.g. Summer 2025"
+              className="w-full p-3 rounded-md bg-[var(--color-bg)] border border-[var(--color-border)] focus:ring-2 focus:ring-[var(--color-accent)]"
+              required
+            />
+          </div>
+
+          {/* Gender */}
+          <div>
+            <label className="block text-sm font-medium mb-2 text-[var(--color-text-secondary)]">
+              Gender
+            </label>
+            <select
+              name="gender"
+              value={productData.gender}
+              onChange={handleChange}
+              className="w-full p-3 rounded-md bg-[var(--color-bg)] border border-[var(--color-border)] focus:ring-2 focus:ring-[var(--color-accent)]"
+              required
+            >
+              <option value="">Select</option>
+              <option value="Men">Men</option>
+              <option value="Women">Women</option>
+              <option value="Unisex">Unisex</option>
+            </select>
+          </div>
         </div>
 
         {/* --- Sizes & Colors --- */}
@@ -264,7 +307,6 @@ const EditProductsPage = () => {
           <label className="block text-sm font-medium mb-2 text-[var(--color-text-secondary)]">
             Product Images
           </label>
-
           <input
             type="file"
             onChange={handleFileUpload}
@@ -275,7 +317,6 @@ const EditProductsPage = () => {
               Uploading...
             </p>
           )}
-
           <div className="flex flex-wrap gap-4 mt-4">
             {productData.images.map((img) => (
               <motion.div
@@ -295,7 +336,6 @@ const EditProductsPage = () => {
                   onClick={() => handleDeleteImage(img.public_id)}
                   disabled={deleting === img.public_id}
                   className="absolute top-1 right-1 bg-red-600 text-white text-xs px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-all"
-                  title="Delete image"
                 >
                   {deleting === img.public_id ? "…" : "✕"}
                 </motion.button>
@@ -304,16 +344,16 @@ const EditProductsPage = () => {
           </div>
         </div>
 
-        {/* --- Submit Button --- */}
+        {/* --- Submit --- */}
         <button
           type="submit"
           className="w-full py-3 bg-[var(--color-accent)] text-black font-semibold rounded-md hover:opacity-90 transition-all"
         >
-          Update Product
+          Create Product
         </button>
       </motion.form>
     </div>
   );
 };
 
-export default EditProductsPage;
+export default CreateProductsPage;

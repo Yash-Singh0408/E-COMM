@@ -1,33 +1,39 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { addUser, deleteUser, fetchUsers, updateUser } from "../redux/slices/adminSlice";
+import {
+  addUser,
+  deleteUser,
+  fetchUsers,
+  updateUser,
+} from "../redux/slices/adminSlice";
+import { motion } from "framer-motion";
+import { UserPlus, Trash2, Shield, Mail } from "lucide-react";
+import PremiumLoader from "../components/Common/PremiumLoader";
 
 const UserManagementPage = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { user } = useSelector((state) => state.auth);
+  const { users, loading, error } = useSelector((state) => state.admin);
 
-const dispatch = useDispatch();
-const navigate = useNavigate();
-const {user} =  useSelector((state) => state.auth);
-const { users, loading , error } = useSelector((state) => state.admin);
+  useEffect(() => {
+    if (user && user.role !== "admin") {
+      navigate("/");
+    }
+  }, [user, navigate]);
 
-useEffect(()=>{
-  if(user && user.role !== "admin"){
-    navigate("/");
-  }
-},[user , navigate])
+  useEffect(() => {
+    if (user && user.role === "admin") {
+      dispatch(fetchUsers());
+    }
+  }, [dispatch, user]);
 
-useEffect(()=>{
-  if(user && user.role === "admin"){
-    dispatch(fetchUsers());
-  }
-},[dispatch , user])
-
-
-  const [formData, setFormData] = React.useState({
+  const [formData, setFormData] = useState({
     name: "",
     email: "",
     password: "",
-    role: "customer", //Default role
+    role: "customer",
   });
 
   const handleChange = (e) => {
@@ -37,132 +43,182 @@ useEffect(()=>{
     });
   };
 
-  const handleSubmit =(e)=>{
+  const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(addUser(formData));
-
-    // Reset the form
     setFormData({
       name: "",
       email: "",
       password: "",
       role: "customer",
-    })
-  }
+    });
+  };
 
-  const handleRoleChange =(userId , newRole)=>{
-   dispatch(updateUser({id:userId ,role:newRole}))
-  }
+  const handleRoleChange = (userId, newRole) => {
+    dispatch(updateUser({ id: userId, role: newRole }));
+  };
 
-  const handleDeleteUser = (userId)=>{
-    if(window.confirm("Are you sure you want to delete this user?"))
-    dispatch(deleteUser(userId))
-  }
+  const handleDeleteUser = (userId) => {
+    if (window.confirm("Are you sure you want to delete this user?")) {
+      dispatch(deleteUser(userId));
+    }
+  };
 
   return (
-    <div className="max-w-7xl mx-auto p-6">
-      <h2 className="text-2xl font-bold mb-4">User Management</h2>
-      {loading && <p>Loading...</p>}
-      {error && <p>Error: {error}</p>}
-      {/* Add New User Form */}
-      <div className="p-6 rounded-lg mb-6">
-        <h3 className="text-lg font-bold mb-4">Add New User</h3>
-        <form onSubmit={handleSubmit}>
+    <motion.div
+      className="max-w-7xl mx-auto p-6"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4 }}
+    >
+      <h2 className="text-3xl font-bold mb-6 text-[var(--color-text-primary)]">
+        User Management
+      </h2>
 
-          <div className="mb-4">
-            <label className="block text-gray-700">Name</label>
+      {loading && <p className="text-gray-500">
+        <PremiumLoader />
+      </p>}
+      {error && <p className="text-red-500">Error: {error}</p>}
+
+      {/* Add User Form */}
+      <motion.div
+        className="p-6 mb-8 bg-[var(--color-bg-secondary)] border border-[var(--color-border)] rounded-xl shadow-md hover:shadow-lg transition-shadow"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2 }}
+      >
+        <h3 className="text-xl font-semibold mb-4 flex items-center gap-2 text-[var(--color-accent)]">
+          <UserPlus className="w-5 h-5" /> Add New User
+        </h3>
+        <form onSubmit={handleSubmit} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div>
+            <label className="block text-[var(--color-text-secondary)] mb-1">
+              Name
+            </label>
             <input
               type="text"
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className="w-full p-2 border rounded"
+              className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]"
               required
             />
           </div>
 
-            <div className="mb-4">
-            <label className="block text-gray-700">Email</label>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              className="w-full p-2 border rounded"
-              required
-            />
+          <div>
+            <label className="block text-[var(--color-text-secondary)] mb-1">
+              Email
+            </label>
+            <div className="flex items-center border rounded-lg p-2">
+              <Mail className="w-4 h-4 text-gray-400 mr-2" />
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                className="w-full focus:outline-none"
+                required
+              />
+            </div>
           </div>
 
-          <div className="mb-4">
-            <label className="block text-gray-700">Password</label>
+          <div>
+            <label className="block text-[var(--color-text-secondary)] mb-1">
+              Password
+            </label>
             <input
               type="password"
               name="password"
               value={formData.password}
               onChange={handleChange}
-              className="w-full p-2 border rounded"
+              className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]"
               required
             />
           </div>
 
-            <div className="mb-4">
-            <label className="block text-gray-700">Role</label>
-            <select
-              name="role"
-              value={formData.role}
-              onChange={handleChange}
-              className="w-full p-2 border rounded"
-            >
-              <option value="customer">Customer</option>
-              <option value="admin">Admin</option>
-            </select>
+          <div>
+            <label className="block text-[var(--color-text-secondary)] mb-1">
+              Role
+            </label>
+            <div className="flex items-center border rounded-lg p-2">
+              <Shield className="w-4 h-4 text-gray-400 mr-2" />
+              <select
+                name="role"
+                value={formData.role}
+                onChange={handleChange}
+                className="w-full bg-transparent focus:outline-none"
+              >
+                <option value="customer" className="bg-black" >Customer</option>
+                <option value="admin" className="bg-black">Admin</option>
+              </select>
+            </div>
           </div>
 
-            <button
-            type="submit"
-            className="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600"
-          >
-            Add User
-          </button>
+          <div className="flex items-end">
+            <motion.button
+              type="submit"
+              className="bg-[var(--color-accent)] text-black font-semibold py-2 px-4 rounded-lg w-full hover:brightness-110 transition-all"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Add User
+            </motion.button>
+          </div>
         </form>
-      </div>
+      </motion.div>
 
-      {/* UserList */}
-        <div className="overflow-x-auto shadow-md sm:rounded-lg">
-            <table className="min-w-full text-left text-gray-500">
-                <thead className="bg-gray-100 text-xs uppercase text-gray-700">
-                    <tr>
-                        <th className="py-3 px-4">Name</th>
-                        <th className="py-3 px-4">Email</th>
-                        <th className="py-3 px-4">Role</th>
-                        <th className="py-3 px-4">Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {users.map((user)=>(
-                        <tr key={user._id} className="hover:bg-gray-50">
-                            <td className="p-4 font-medium text-gray-900 whitespace-nonwrap">
-                                {user.name}
-                            </td>
-                            <td className="p-4">{user.email}</td>
-                            <td className="p-4">
-                                <select value={user.role}
-                                onChange={(e)=>handleRoleChange(user._id , e.target.value)}
-                                 className="p-2 border rounded"   
-                                >
-                                    <option value="customer">Customer</option>
-                                    <option value="admin">Admin</option>
-                                </select>
-                            </td>
-                            <td className="p-4">
-                                <button onClick={()=> handleDeleteUser(user._id)} className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">Delete</button>
-                            </td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
-        </div>
-    </div>
+      {/* Users Table */}
+      <motion.div
+        className="overflow-x-auto shadow-md rounded-xl bg-[var(--color-bg-secondary)] border border-[var(--color-border)]"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.3 }}
+      >
+        <table className="min-w-full text-left text-gray-600">
+          <thead className="bg-[var(--color-bg-primary)] text-[var(--color-text-primary)] text-sm uppercase">
+            <tr>
+              <th className="py-3 px-4">Name</th>
+              <th className="py-3 px-4">Email</th>
+              <th className="py-3 px-4">Role</th>
+              <th className="py-3 px-4 text-center">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {users.map((u) => (
+              <motion.tr
+                key={u._id}
+                className="border-b hover:bg-[var(--color-hover-bg)] transition-all"
+              >
+                <td className="py-3 px-4 font-medium text-[var(--color-text-primary)]">
+                  {u.name}
+                </td>
+                <td className="py-3 px-4">{u.email}</td>
+                <td className="py-3 px-4">
+                  <select
+                    value={u.role}
+                    onChange={(e) => handleRoleChange(u._id, e.target.value)}
+                    className="p-2 border rounded-lg focus:ring-1 focus:ring-[var(--color-accent)]"
+                  >
+                    <option value="customer" className="bg-black" >Customer</option>
+                    <option value="admin" className="bg-black" >Admin</option>
+                  </select>
+                </td>
+                <td className="py-3 px-4 text-center">
+                  <motion.button
+                    onClick={() => handleDeleteUser(u._id)}
+                    className="bg-red-500 text-white px-3 py-2 rounded-lg hover:bg-red-600 flex items-center gap-1 justify-center mx-auto"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Trash2 className="w-4 h-4" /> Delete
+                  </motion.button>
+                </td>
+              </motion.tr>
+            ))}
+          </tbody>
+        </table>
+      </motion.div>
+    </motion.div>
   );
 };
 

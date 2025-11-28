@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import PremiumLoader from "../Common/PremiumLoader";
 
 // Animation variants for scroll reveal
 const containerVariants = {
@@ -29,7 +30,7 @@ const cardVariants = {
 
 const ProductGrid = ({ products, loading, error }) => {
   if (loading)
-    return <p className="text-[#b3b3b3] text-center">Loading...</p>;
+    return <PremiumLoader />;
   if (error)
     return <p className="text-red-400 text-center">Error: {error}</p>;
 
@@ -62,7 +63,7 @@ const ProductGrid = ({ products, loading, error }) => {
             <div className="w-full h-64 sm:h-80 overflow-hidden bg-[#0b0b0b]">
               <motion.img
                 src={product.images[0]?.url}
-                alt={product.name}
+                alt={product.name.slice(0, -1)}
                 className="w-full h-full object-cover transition-transform duration-700"
                 draggable="false"
                 whileHover={{
@@ -75,7 +76,7 @@ const ProductGrid = ({ products, loading, error }) => {
             {/* Product Info */}
             <div className="px-4 py-5">
               <h3 className="text-[#f5f5f5] text-sm sm:text-base font-medium mb-1 truncate transition-colors duration-300 hover:text-[#d6a354]">
-                {product.name}
+                {product.name.slice(0, -2)}
               </h3>
               <p className="text-[#d6a354] font-semibold text-sm tracking-tight">
                 ${product.price}

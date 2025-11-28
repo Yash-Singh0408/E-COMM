@@ -175,7 +175,7 @@ const NewArrivals = () => {
                 {/* Product Info */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-[#141414] to-transparent">
                   <h3 className="text-base font-semibold text-[#f5f5f5] mb-1 truncate">
-                    {product.name}
+                    {product.name.slice(0, -2)}
                   </h3>
                   <div className="flex items-center justify-between">
                     <p className="text-sm text-[#d6a354] font-semibold">

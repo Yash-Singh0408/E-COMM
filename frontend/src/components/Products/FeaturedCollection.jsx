@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, Sparkles, Shirt, Package, Zap, Star } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const FeaturedCollection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -8,6 +9,8 @@ const FeaturedCollection = () => {
   const { scrollYProgress } = useScroll();
   
   const textY = useTransform(scrollYProgress, [0, 0.5], [0, -30]);
+
+  const navigate =useNavigate();
 
   const handleMouseMove = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -131,6 +134,7 @@ const FeaturedCollection = () => {
               whileTap={{ scale: 0.98 }}
               transition={{ delay: 0.6, duration: 0.6 }}
               viewport={{ once: true }}
+              onClick={() => navigate('/collections/all')}
             >
               <span className='flex items-center gap-2'>
                 Shop Now
