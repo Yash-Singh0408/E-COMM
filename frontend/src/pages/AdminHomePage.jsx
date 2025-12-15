@@ -40,7 +40,7 @@ const AdminHomePage = () => {
     dispatch(fetchAllOrders());
   }, [dispatch]);
 
- // 🧮 Dynamically calculate monthly revenue from all orders
+ //  Dynamically calculate monthly revenue from all orders
 // const monthlyRevenue = orders?.reduce((acc, order) => {
 //   if (!order.createdAt || !order.totalPrice) return acc;
   
@@ -52,7 +52,7 @@ const AdminHomePage = () => {
 //   return acc;
 // }, {});
 
-// 🪄 Convert to array format suitable for Recharts
+//  Convert to array format suitable for Recharts
 // const revenueData = Object.entries(monthlyRevenue)
 //   .map(([month, revenue]) => ({ month, revenue }))
 //   .sort(
@@ -82,12 +82,17 @@ const revenueData = [
       name: "Cancelled",
       value: orders.filter((o) => o.status === "Cancelled").length,
     },
+    {
+      name: "Shipped",
+      value: orders.filter((o) => o.status === "Shipped").length,
+    }
   ];
 
   const COLORS = [
     "var(--color-success)",
     "var(--color-accent)",
     "var(--color-error)",
+    "#347aeb",
   ];
 
   console.log("Orders in AdminHomePage:", orders);
@@ -212,7 +217,7 @@ const revenueData = [
               </ResponsiveContainer>
             </motion.div>
 
-            {/* 🥧 Order Status Chart */}
+            {/*  Order Status Chart */}
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
