@@ -45,6 +45,10 @@ app.get("/", (req, res) => {
   res.send("Hello from Yash");
 });
 
+app.get("/", (req, res) => {
+  res.json({ message: "Backend running on Vercel 🚀" });
+});
+
 // Api routes
 app.use("/api/users", userRoute);
 app.use("/api/products", productRoute);
