@@ -1,85 +1,129 @@
 import User from "../models/User.model.js";
 import jwt from "jsonwebtoken";
+import validator from "validator";
 
 // Register user
 const registerUser = async (req, res) => {
   const { name, email, password } = req.body;
+
+
   try {
-    let user = await User.findOne({ email });
-    if (user) {
-      return res.status(400).json({ message: "User already exists" });
+    // 1️⃣ Validate input
+    if (!name || !email || !password) {
+      return res.status(400).json({ message: "All fields are required" });
     }
-    user = new User({ name, email, password });
-    await user.save();
 
-    //Jwt payload
-    const payload = { user: { id: user._id, role: user.role } };
+    if (!validator.isEmail(email)) {
+      return res.status(400).json({ message: "Invalid email format" });
+    }
 
-    // sign and return jwt
-    jwt.sign(
-      payload,
-      process.env.JWT_SECRET,
-      { expiresIn: "1d" },
-      (err, token) => {
-        if (err) throw err;
+    if (password.length < 6) {
+      return res
+        .status(400)
+        .json({ message: "Password must be at least 6 characters" });
+    }
 
-        res.status(201).json({
-          user: {
-            _id: user._id,
-            name: user.name,
-            email: user.email,
-            role: user.role,
-          },
-          token,
-        });
-      }
-    );
+    // 2️⃣ Normalize email
+    const normalizedEmail = email.toLowerCase();
+
+    // 3️⃣ Check if user already exists
+    const existingUser = await User.findOne({ email: normalizedEmail });
+    if (existingUser) {
+      return res.status(409).json({ message: "User already exists" });
+    }
+
+    // 4️⃣ Create user
+    const user = await User.create({
+      name: name.trim(),
+      email: normalizedEmail,
+      password,
+    });
+
+    // 5️⃣ JWT payload
+    const payload = {
+      user: {
+        id: user._id,
+        role: user.role,
+      },
+    };
+
+    // 6️⃣ Sign token
+    const token = jwt.sign(payload, process.env.JWT_SECRET, {
+      expiresIn: "1d",
+    });
+
+    // 7️⃣ Response
+    res.status(201).json({
+      message: "User registered successfully",
+      user: {
+        _id: user._id,
+        name: user.name,
+        email: user.email,
+        role: user.role,
+      },
+      token,
+    });
   } catch (error) {
-    console.log(error);
-    res.status(500).send("Server error");
+    console.error("Register Error:", error);
+    res.status(500).json({ message: "Server error" });
   }
 };
 
 // Login user
 const loginUser = async (req, res) => {
   const { email, password } = req.body;
-  try {
-    let user = await User.findOne({ email });
 
-    if (!user) {
-      return res.status(400).json({ message: "User not found" });
+  try {
+    // 1️⃣ Validate input
+    if (!email || !password) {
+      return res.status(400).json({ message: "Email and password required" });
     }
+
+    // 2️⃣ Normalize email
+    const normalizedEmail = email.toLowerCase();
+
+    // 3️⃣ Find user
+    const user = await User.findOne({ email: normalizedEmail });
+    if (!user) {
+      return res.status(401).json({ message: "User not found" });
+    }
+
+    // 4️⃣ Match password
     const isMatch = await user.matchPassword(password);
     if (!isMatch) {
-      return res.status(400).json({ message: "Invalid credentials" });
+      return res.status(401).json({ message: "Invalid email or password" });
     }
-    //Jwt payload
-    const payload = { user: { id: user._id, role: user.role } };
 
-    // sign and return jwt
-    jwt.sign(
-      payload,
-      process.env.JWT_SECRET,
-      { expiresIn: "1d" },
-      (err, token) => {
-        if (err) throw err;
+    // 5️⃣ JWT payload
+    const payload = {
+      user: {
+        id: user._id,
+        role: user.role,
+      },
+    };
 
-        res.json({
-          user: {
-            _id: user._id,
-            name: user.name,
-            email: user.email,
-            role: user.role,
-          },
-          token,
-        });
-      }
-    );
+    // 6️⃣ Sign token
+    const token = jwt.sign(payload, process.env.JWT_SECRET, {
+      expiresIn: "1d",
+    });
+
+    // 7️⃣ Response
+    res.status(200).json({
+      message: "Login successful",
+      user: {
+        _id: user._id,
+        name: user.name,
+        email: user.email,
+        role: user.role,
+      },
+      token,
+    });
   } catch (error) {
-    console.log(error);
-    res.status(500).send("Server error");
+    console.error("Login Error:", error);
+    res.status(500).json({ message: "Server error" });
   }
 };
+
 
 // get loged in user info
 const getProfileInfo = async(req, res)=>{

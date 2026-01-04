@@ -192,12 +192,12 @@ const UserManagementPage = () => {
                 <td className="py-3 px-4 font-medium text-[var(--color-text-primary)]">
                   {u.name}
                 </td>
-                <td className="py-3 px-4">{u.email}</td>
+                <td className="py-3 px-4 text-[var(--color-text-secondary)]">{u.email}</td>
                 <td className="py-3 px-4">
                   <select
                     value={u.role}
                     onChange={(e) => handleRoleChange(u._id, e.target.value)}
-                    className="p-2 border rounded-lg focus:ring-1 focus:ring-[var(--color-accent)]"
+                    className="p-2 border text-accent rounded-lg focus:ring-1 focus:ring-[var(--color-accent)]"
                   >
                     <option value="customer" className="bg-black" >Customer</option>
                     <option value="admin" className="bg-black" >Admin</option>

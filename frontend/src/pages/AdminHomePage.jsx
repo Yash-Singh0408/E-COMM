@@ -95,7 +95,7 @@ const revenueData = [
     "#347aeb",
   ];
 
-  console.log("Orders in AdminHomePage:", orders);
+  // console.log("Orders in AdminHomePage:", orders);
 
   return (
     <div className="max-w-7xl mx-auto p-6 text-[var(--color-text-primary)]">
@@ -295,11 +295,11 @@ const revenueData = [
                         </td>
                         <td
                           className={`py-3 px-4 font-medium ${
-                            order.status === "Delivered"
-                              ? "text-[var(--color-success)]"
-                              : order.status === "Cancelled"
-                              ? "text-[var(--color-error)]"
-                              : "text-[var(--color-text-secondary)]"
+                            order.status === "Delivered" ? "text-[var(--color-success)]" : 
+                            order.status === "Cancelled"? "text-[var(--color-error)]": 
+                            order.status === "Processing" ? "text-[var(--color-accent)]" : 
+                            order.status === "Shipped" ? "text-[#3b82f6]" : "text-[var(--color-text-secondary)]"
+
                           }`}
                         >
                           {order.status}

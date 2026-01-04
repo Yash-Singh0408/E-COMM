@@ -37,7 +37,7 @@ const AdminSidebar = () => {
       initial={{ x: -100, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       transition={{ duration: 0.4, ease: "easeOut" }}
-      className="h-screen w-64 bg-[var(--color-bg-secondary)] border-r border-[var(--color-border)] p-6 shadow-lg flex flex-col justify-between"
+      className="h-[100vh] w-64 bg-[var(--color-bg-secondary)] border-r border-[var(--color-border)] p-6 shadow-lg flex flex-col justify-between"
     >
       {/* Header */}
       <div>

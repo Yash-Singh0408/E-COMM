@@ -10,7 +10,7 @@ const AdminLayout = () => {
   const toggleSidebar = () => setIsSidebarOpen((prev) => !prev);
 
   return (
-    <div className="min-h-screen flex flex-col md:flex-row relative bg-[var(--color-bg)] text-[var(--color-text-primary)] transition-colors duration-300">
+    <div className="min-h-screen h-[100vh] flex flex-col md:flex-row relative bg-[var(--color-bg)] text-[var(--color-text-primary)] transition-colors duration-300">
       {/* 🌙 Mobile Header */}
       <div className="flex md:hidden p-4 bg-[var(--color-bg-secondary)] text-[var(--color-text-primary)] z-30 shadow-md items-center justify-between">
         <div className="flex items-center gap-3">

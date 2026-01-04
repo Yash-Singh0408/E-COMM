@@ -74,8 +74,13 @@ const authSlice = createSlice({
       state.guestId = `guest_${new Date().getTime()}`; // Generate a new guest ID
       localStorage.setItem("guestId", state.guestId);
     },
+    // ✅ REQUIRED for Sonner
+    clearAuthError: (state) => {
+      state.error = null;
+    },
   },
   extraReducers: (builder) => {
+    // Handling login user actions
     builder.addCase(loginUser.pending, (state) => {
       state.loading = true;
       state.error = null;
@@ -86,7 +91,7 @@ const authSlice = createSlice({
     });
     builder.addCase(loginUser.rejected, (state , action) => {
       state.loading = false;
-      state.error = action.payload.message;
+      state.error = action.payload || "Login failed";
     });
     // Handling register user actions
     builder.addCase(registerUser.pending, (state) => {
@@ -99,10 +104,10 @@ const authSlice = createSlice({
     });
     builder.addCase(registerUser.rejected, (state , action) => {
       state.loading = false;
-      state.error = action.payload.message;
+      state.error = action.payload || "Registration failed";
     });
   },
 });
 
-export const { logout, generateNewGuestId } = authSlice.actions;
+export const { logout, generateNewGuestId , clearAuthError } = authSlice.actions;
 export default authSlice.reducer;
